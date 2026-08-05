@@ -1,0 +1,48 @@
+{
+  "slug": "aparencia-nao-e-patrimonio",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Registro: dor ampla. Sem número a conferir.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Carro de duzentos mil na garagem\nRelógio de trinta mil no pulso\nViagem internacional toda temporada\n\nE três meses de reserva na conta"
+    },
+    {
+      "type": "tweet",
+      "text": "Isso não é riqueza\n\nÉ o retrato de quem confundiu parecer com ser",
+      "image": "render/assets/detalhe-oculos.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "O mercado inteiro foi construído para te vender aparência\n\nFinanciamento, consórcio, assinatura, upgrade\n\nTudo desenhado para transformar o que você produz em algo que você exibe"
+    },
+    {
+      "type": "tweet",
+      "text": "Quem tem pouco mostra tudo\n\nQuem tem muito não precisa mostrar nada"
+    },
+    {
+      "type": "tweet",
+      "text": "Patrimônio é o que continua existindo quando ninguém está olhando\n\nE quando você para de trabalhar"
+    },
+    {
+      "type": "tweet",
+      "text": "A pergunta não é quanto você ganha\n\nÉ quanto sobra depois que a vida que você mostra é paga",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Quem tem pouco mostra tudo. Quem tem muito não precisa mostrar nada.\n\nSe você parasse de trabalhar hoje, quantos meses a vida que você mostra se sustentaria?"
+}

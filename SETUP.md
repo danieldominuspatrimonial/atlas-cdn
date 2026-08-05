@@ -20,7 +20,28 @@ O ambiente onde o Claude executa código **não tem acesso de rede à Graph API 
 
 ---
 
-## Passo 1 — Token de 60 dias (2 min)
+## Passo 1 — Token que nunca expira (Usuário do Sistema)
+
+Caminho recomendado. Mais passos agora, zero manutenção depois.
+
+**Pré-requisito:** o app precisa pertencer ao seu Portfólio Empresarial. Em [business.facebook.com/settings](https://business.facebook.com/settings) → **Contas → Aplicativos**, o app `1622496486176260` tem que aparecer na lista. Se não aparecer, clique em **Adicionar → Reivindicar um aplicativo** e informe o ID. Sem isso o token não enxerga o app, e é uma causa provável dos erros anteriores.
+
+1. Em Configurações do Negócio, vá em **Usuários → Usuários do sistema** → **Adicionar**
+2. Nome: `atlas-agente`. Função: **Administrador**. Criar
+3. Com o usuário selecionado, clique em **Adicionar ativos**:
+   - **Aplicativos** → selecione o app → ative **Gerenciar aplicativo (controle total)**
+   - **Páginas** → selecione a Página vinculada ao @soudanielcarvalho → **Acesso total**
+   - **Contas do Instagram** → selecione @soudanielcarvalho → **Acesso total**
+4. Clique em **Gerar novo token**, escolha o app e marque as permissões:
+   `instagram_basic`, `instagram_content_publish`, `instagram_manage_insights`, `pages_show_list`, `pages_read_engagement`, `pages_manage_posts`, `business_management`
+5. Gere e **copie na hora** — o token só aparece uma vez
+6. Cole no segredo `IG_ACCESS_TOKEN` do repositório
+
+Esse token não expira. Ele só é invalidado se você remover o usuário do sistema, tirar o app do portfólio ou revogar o acesso à Página. Com ele, o workflow `renovar-token.yml` fica desnecessário e pode ser desativado em Actions.
+
+---
+
+## Passo 1-B — Alternativa: token de 60 dias
 
 Seu token atual é o de curta duração e expira em cerca de 1 hora. Abra este endereço no navegador (já preenchido com o ID e a chave do seu app):
 
@@ -95,7 +116,7 @@ Para publicar fora de hora: aba **Actions → Publicar carrossel → Run workflo
 ```bash
 npm install
 pip install requests
-node render/render.js content/<arquivo>.json     # valida e gera os JPEGs
+node render/render.js content/<arquivo>.json     # valida e gera os JPEGs 1440x1800
 python3 publish/publish.py out/<slug> --dry-run  # exige rede liberada para a Meta
 ```
 
@@ -134,6 +155,7 @@ atlas-carrossel/
 | Formato | JPEG apenas | Graph API |
 | Tamanho por imagem | ≤ 8 MB | Graph API |
 | Aspect ratio | 4:5 (permitido: 4:5 a 1.91:1) | Graph API |
+| Largura | 1440px, o máximo aceito | Graph API |
 | Posts por 24h via API | 100 | Graph API, checado antes de publicar |
 | App Review | não é necessário | publicação na própria conta usa Standard Access |
 | Hashtags | 0 | decisão de performance |

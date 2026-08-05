@@ -12,8 +12,7 @@
   "slides": [
     {
       "type": "tweet",
-      "text": "Você realmente quer depender do trabalho ativo da sua empresa para sempre?",
-      "image": "render/assets/roma.jpg"
+      "text": "Você realmente quer depender do trabalho ativo da sua empresa para sempre?"
     },
     {
       "type": "tweet",
@@ -33,7 +32,6 @@
     },
     {
       "type": "tweet",
-      "size": "lg",
       "text": "Faturamento alto não protege ninguém\n\nEstrutura protege",
       "engagement": {
         "reply": "",
@@ -44,5 +42,6 @@
       }
     }
   ],
-  "caption": "Faturamento alto não protege ninguém. Estrutura protege.\n\nQuantos dias você conseguiria ficar fora da sua empresa sem o resultado cair?"
+  "caption": "Faturamento alto não protege ninguém. Estrutura protege.\n\nQuantos dias você conseguiria ficar fora da sua empresa sem o resultado cair?",
+  "_registro": " Foto pendente: usar uma do Drive quando estiverem na pasta assets."
 }

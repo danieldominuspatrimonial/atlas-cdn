@@ -76,8 +76,22 @@ function checkText(raw, where, opts = {}) {
 function lint(carousel) {
   const problems = [];
 
+  // Orçamento de caracteres por slide. Existe porque a tipografia é fixa:
+  // texto longo não é "encolhido", ele simplesmente não cabe.
+  const LIMITE = carousel.aspect === '4:5' ? 430 : 330;
+  const LIMITE_COM_FOTO = Math.round(LIMITE * 0.42);
+
   carousel.slides.forEach((s, i) => {
     const where = `slide ${i + 1}`;
+    if (s.text) {
+      const max = s.image ? LIMITE_COM_FOTO : LIMITE;
+      if (s.text.length > max) {
+        problems.push(
+          `${where}: ${s.text.length} caracteres (máximo ${max}${s.image ? ' porque tem foto' : ''}). ` +
+            `Corte ${s.text.length - max}.`
+        );
+      }
+    }
     const campos = [s.text, s.label, s.value, ...(s.items || []),
       s.left?.title, s.right?.title, ...(s.left?.items || []), ...(s.right?.items || [])];
     for (const c of campos) {

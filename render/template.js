@@ -94,7 +94,6 @@ function buildHTML(carousel, slide, index) {
   const a = carousel.author || {};
   const H = carousel.aspect === '4:5' ? 1350 : 1080;
   const img = slide.image ? dataURL(slide.image) : null;
-  const size = slide.size || 'auto';
   const isLast = index === carousel.slides.length - 1;
   const swipe = !isLast && slide.swipe !== false && carousel.swipe !== false;
 
@@ -113,19 +112,20 @@ body{background:${C.bg};font-family:'Nunito',system-ui,sans-serif;-webkit-font-s
 .badge{width:34px;height:34px;flex:0 0 auto}
 .handle{color:${C.muted};font-size:33px;font-style:italic;font-weight:400;line-height:1.2}
 .main{flex:1 1 auto;display:flex;flex-direction:column;justify-content:flex-start;padding-top:129px}
-/* Sem foto o texto fica opticamente centrado; com foto respeita a geometria do modelo. */
+/* No 4:5 todo o bloco fica opticamente centrado, com ou sem foto, para que a
+   posicao do texto nao mude de um slide para o outro. */
 .main--center{justify-content:center;padding-top:0;padding-bottom:6%}
 .txt{color:${C.text};font-weight:400;letter-spacing:-.2px}
 .txt p+p{margin-top:.85em}
 .txt b{font-weight:800}
-.size-auto .txt{font-size:${H > 1080 ? 48 : 44}px;line-height:1.2}
-.size-lg .txt{font-size:${H > 1080 ? 62 : 56}px;line-height:1.18}
-.size-sm .txt{font-size:40px;line-height:1.24}
+/* Tamanho ÚNICO em todos os slides. Não existe variação por slide, nem redução
+   automática: se o texto não couber, o render falha e o texto é encurtado. */
+.txt{font-size:${H > 1080 ? 48 : 44}px;line-height:1.22}
 .list{list-style:none;margin-top:.85em;display:flex;flex-direction:column;gap:.5em;
-  color:${C.text};font-size:44px;line-height:1.18;font-weight:400}
+  color:${C.text};font-size:${H > 1080 ? 48 : 44}px;line-height:1.22;font-weight:400}
 .list li{padding-left:0}
 .stat__v{font-size:150px;font-weight:800;color:${C.text};letter-spacing:-6px;line-height:.95}
-.stat__l{margin-top:24px;font-size:44px;line-height:1.18;color:${C.text}}
+.stat__l{margin-top:24px;font-size:${H > 1080 ? 48 : 44}px;line-height:1.22;color:${C.text}}
 .shot{margin-top:122px;width:100%;border-radius:26px;overflow:hidden;background:#eee;flex:0 0 auto}
 .shot img{width:100%;display:block;object-fit:cover;max-height:${H === 1350 ? 620 : 400}px}
 .eng{margin-top:64px;display:flex;justify-content:space-between;align-items:center;
@@ -137,7 +137,7 @@ body{background:${C.bg};font-family:'Nunito',system-ui,sans-serif;-webkit-font-s
 .pips{display:flex;gap:9px;align-items:center}
 .pip{width:11px;height:11px;border-radius:50%;background:${C.muted};opacity:.28}
 .pip.on{opacity:1;width:30px;border-radius:6px}
-</style></head><body class="size-${size}">
+</style></head><body>
   <div class="head">
     ${avatarEl(a)}
     <div class="who">
@@ -145,7 +145,7 @@ body{background:${C.bg};font-family:'Nunito',system-ui,sans-serif;-webkit-font-s
       <div class="handle">@${esc(a.handle || 'soudanielcarvalho')}</div>
     </div>
   </div>
-  <div class="main${!img && !slide.engagement && H > 1080 ? ' main--center' : ''}">
+  <div class="main${H > 1080 ? ' main--center' : ''}">
     ${body(slide)}
     ${img ? `<div class="shot"><img src="${img}"></div>` : ''}
     ${engagementBar(slide)}

@@ -1,0 +1,43 @@
+{
+  "slug": "a-conta-da-aposentadoria",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Registro: dor ampla com ponte para estrutura. Sem número específico, por opção, para não depender de valor que muda todo ano.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "O teto do INSS não paga o padrão de vida de ninguém que fatura bem\n\nVocê recolhe por décadas para receber, no melhor cenário, uma fração do que gasta hoje em um mês"
+    },
+    {
+      "type": "tweet",
+      "text": "A conta já nasce errada\n\nE a resposta que te deram foi trabalhar mais tempo"
+    },
+    {
+      "type": "tweet",
+      "text": "Empresário tem um agravante\n\nMuitos recolhem sobre um pró-labore mínimo a vida inteira\n\nNa hora de parar, descobrem que a aposentadoria foi calculada sobre um valor que nunca foi o real"
+    },
+    {
+      "type": "tweet",
+      "text": "Sua aposentadoria não vai vir do Estado\n\nEla vai vir do que você conseguiu transformar em patrimônio antes de parar"
+    },
+    {
+      "type": "tweet",
+      "text": "E patrimônio não se constrói no fim da carreira\n\nSe constrói enquanto ainda dá trabalho construir",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Sua aposentadoria não vai vir do Estado. Vai vir do que virou patrimônio antes de você parar.\n\nSe você tivesse que parar de trabalhar em cinco anos, o que já está construído sustenta você?"
+}

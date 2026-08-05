@@ -21,7 +21,6 @@
     },
     {
       "type": "tweet",
-      "size": "lg",
       "text": "Quem produz sustenta a conta\n\nQuem não produz recebe o benefício\n\nE ainda dizem que o produtor é o privilegiado"
     },
     {
@@ -34,9 +33,14 @@
     },
     {
       "type": "tweet",
-      "size": "lg",
       "text": "O sistema não vai te recompensar por trabalhar mais\n\nEle foi construído para cobrar mais de quem trabalha mais",
-      "engagement": { "reply": "", "repost": "", "like": "", "save": "", "share": "" }
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
     }
   ],
   "caption": "Você trabalha metade do ano só para recolher tributo e ainda te chamam de privilegiado.\n\nQuantos meses do seu ano vão embora antes de sobrar alguma coisa para você?"

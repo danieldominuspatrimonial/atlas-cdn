@@ -1,14 +1,22 @@
 #!/usr/bin/env node
 // Uso: node render/render.js content/<arquivo>.json
-// Saída: out/<slug>/01.jpg ... NN.jpg  (1080x1350, JPEG — formato exigido pela Graph API)
+// Saída: out/<slug>/01.jpg ... NN.jpg  (1440x1800, JPEG 4:4:4 — formato exigido pela Graph API)
 
 const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
+const sharp = require('sharp');
 const { buildHTML } = require('./template');
 const { lint } = require('./lint');
 
-const W = 1080;
+// Instagram aceita até 1440px de largura. Renderizamos o dobro disso e reduzimos
+// com Lanczos: o texto fica com bordas muito mais limpas do que renderizando
+// direto no tamanho final. JPEG 4:4:4 (sem subamostragem de cor) preserva a
+// nitidez das letras, que é onde a compressão costuma estragar o resultado.
+const W_CSS = 1080;          // o design é desenhado em 1080
+const ESCALA = 2;            // renderiza em 2160 de largura
+const W_FINAL = 1440;        // maior largura que o Instagram aceita
+const QUALIDADE = 95;
 
 (async () => {
   const input = process.argv[2];
@@ -35,13 +43,17 @@ const W = 1080;
     console.log('  validador: aprovado');
   }
 
-  const H = carousel.aspect === '4:5' ? 1350 : 1080;
+  const H_CSS = carousel.aspect === '4:5' ? 1350 : 1080;
+  const H_FINAL = Math.round((W_FINAL / W_CSS) * H_CSS);
 
   const browser = await chromium.launch({
     executablePath: process.env.PW_CHROMIUM || undefined,
     args: ['--font-render-hinting=none', '--disable-lcd-text'],
   });
-  const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
+  const ctx = await browser.newContext({
+    viewport: { width: W_CSS, height: H_CSS },
+    deviceScaleFactor: ESCALA,
+  });
   const page = await ctx.newPage();
 
   const files = [];
@@ -49,28 +61,30 @@ const W = 1080;
     const html = buildHTML(carousel, carousel.slides[i], i);
     await page.setContent(html, { waitUntil: 'load' });
     await page.evaluate(() => document.fonts.ready);
-    // Ajuste automático: reduz a tipografia até o conteúdo caber na área segura.
-    await page.evaluate(() => {
-      const main = document.querySelector('.main');
-      const txt = main.querySelector('.txt');
-      if (!txt) return;
-      const fits = () => document.body.scrollHeight <= document.body.clientHeight + 1;
-      let size = parseFloat(getComputedStyle(txt).fontSize);
-      let guard = 0;
-      while (!fits() && size > 26 && guard++ < 40) {
-        size -= 2;
-        txt.style.fontSize = size + 'px';
-        const list = main.querySelector('.list');
-        if (list) list.style.fontSize = size + 'px';
-      }
-    });
+    // Sem redução automática: a tipografia é a mesma em todo slide.
+    // Se estourar, o render falha e diz quanto precisa ser cortado.
+    const excesso = await page.evaluate(
+      () => document.body.scrollHeight - document.body.clientHeight
+    );
+    if (excesso > 1) {
+      const linhas = Math.ceil(excesso / 59);
+      console.error(
+        `\nESTOUROU no slide ${i + 1}: ${excesso}px além da área segura (~${linhas} linha(s)).` +
+          `\nCorte cerca de ${linhas * 36} caracteres. A tipografia não é reduzida de propósito,` +
+          `\npara que todos os slides tenham exatamente o mesmo tamanho de letra.`
+      );
+      await browser.close();
+      process.exit(1);
+    }
     const file = path.join(outDir, String(i + 1).padStart(2, '0') + '.jpg');
-    await page.screenshot({
-      path: file,
-      type: 'jpeg',
-      quality: 92,
-      clip: { x: 0, y: 0, width: W, height: H },
+    const png = await page.screenshot({
+      type: 'png',
+      clip: { x: 0, y: 0, width: W_CSS, height: H_CSS },
     });
+    await sharp(png)
+      .resize(W_FINAL, H_FINAL, { kernel: 'lanczos3', fit: 'fill' })
+      .jpeg({ quality: QUALIDADE, chromaSubsampling: '4:4:4', mozjpeg: true })
+      .toFile(file);
     const kb = (fs.statSync(file).size / 1024).toFixed(0);
     console.log(`  ✓ ${path.basename(file)}  ${kb} KB`);
     files.push(file);

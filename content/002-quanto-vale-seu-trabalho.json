@@ -1,0 +1,48 @@
+{
+  "slug": "quanto-vale-seu-trabalho",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Registro: dor ampla. CONFERIR antes de publicar: quantos meses de salário médio custa um carro popular no Brasil e nos EUA hoje.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Um carro popular no Brasil custa quase três anos de salário mínimo\n\nNos Estados Unidos, o mesmo carro sai por menos de um ano de trabalho\n\nNão é o carro que está caro aqui"
+    },
+    {
+      "type": "tweet",
+      "text": "É o seu trabalho que vale menos",
+      "image": "render/assets/retrato-bw.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Você acorda no mesmo horário que um americano\nEntrega o mesmo resultado\nAssume mais risco do que ele\n\nE leva para casa uma fração do que ele leva"
+    },
+    {
+      "type": "tweet",
+      "text": "A diferença não está no esforço\n\nEstá em quanto do que você produz volta para você no fim do mês"
+    },
+    {
+      "type": "tweet",
+      "text": "Todo ano o faturamento sobe\n\nE todo ano o que sobra rende menos do que rendia no ano anterior\n\nVocê corre mais para ficar no mesmo lugar"
+    },
+    {
+      "type": "tweet",
+      "text": "Ninguém vai corrigir isso por você\n\nQuem espera correção espera sentado",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Não é o carro que está caro. É o seu trabalho que vale menos aqui.\n\nQuantos meses você trabalha hoje para pagar o que pagava em um mês há cinco anos?"
+}
