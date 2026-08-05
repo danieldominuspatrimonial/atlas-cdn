@@ -1,0 +1,48 @@
+{
+  "slug": "dependencia-da-empresa",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Você realmente quer depender do trabalho ativo da sua empresa para sempre?",
+      "image": "render/assets/roma.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Empresário que fatura 300 mil por mês\nnão consegue ficar 90 dias fora sem o resultado cair\n\nIsso não é sinal de empresa grande\nÉ sinal de empresa que só existe enquanto você está dentro dela"
+    },
+    {
+      "type": "tweet",
+      "text": "Aluguel recebido como pessoa física pode chegar a 27,5% de imposto de renda\nA mesma receita, dentro de uma estrutura societária, é tributada de outra forma\n\nNinguém te avisou porque ninguém ganha nada te avisando"
+    },
+    {
+      "type": "tweet",
+      "text": "Você tem CDB, tem ação, tem um imóvel, talvez tenha cripto\nSe te perguntarem por que cada um deles está ali, você não sabe responder\n\nIsso não é carteira\nÉ acúmulo"
+    },
+    {
+      "type": "tweet",
+      "text": "Seu filho não vai receber a empresa que você levantou\n\nEle vai receber inventário de três anos, honorário de advogado e um sócio que ele nunca escolheu"
+    },
+    {
+      "type": "tweet",
+      "size": "lg",
+      "text": "Faturamento alto não protege ninguém\n\nEstrutura protege",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Faturamento alto não protege ninguém. Estrutura protege.\n\nQuantos dias você conseguiria ficar fora da sua empresa sem o resultado cair?"
+}

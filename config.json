@@ -1,0 +1,122 @@
+{
+  "_comentario": "Configuração do agente de carrosséis Atlas Co. Editar aqui muda o comportamento do agente.",
+  "volume": {
+    "carrosseis_por_dia": 1,
+    "horarios_de_publicacao": [
+      "19:30"
+    ],
+    "dias_ativos": [
+      "seg",
+      "ter",
+      "qua",
+      "qui",
+      "sex",
+      "sab",
+      "dom"
+    ],
+    "_nota_volume": "Conta de 2.4k seguidores: estudo Metricool aponta pico de performance entre 7 e 14 posts/semana nessa faixa. Como já existem ~2 Reels/dia, 1 carrossel/dia entra sem canibalizar. Subir para 2 só depois de 3 semanas de dado."
+  },
+  "aprovacao": {
+    "modo": "aprovar_antes",
+    "_modos": [
+      "aprovar_antes",
+      "automatico"
+    ],
+    "trocar_para_automatico_apos": "3 carrosséis seguidos aprovados sem edição",
+    "canal": "entrega dos JPEGs + legenda nesta conversa para o Daniel aprovar"
+  },
+  "formato": {
+    "slides_min": 5,
+    "slides_max": 8,
+    "_nota_slides": "Máximo técnico da Graph API é 10.",
+    "aspect": "4:5",
+    "dimensoes": "1080x1350",
+    "_nota_aspect": "Decisão do Daniel em 05/ago/2026. O modelo original era 1:1; 4:5 ocupa 25% mais tela vertical no feed. Trocar para 1:1 é mudar um campo no JSON do carrossel.",
+    "arquivo": "JPEG qualidade 92",
+    "estilo": "print de tweet, fundo branco",
+    "avatar": "render/assets/avatar.jpg"
+  },
+  "voz": {
+    "prompt_base": "PROMPT Crença Escrita (Daniel, ago/2026)",
+    "modo": "integral_sem_excecao",
+    "_nota_modo": "Decisão do Daniel em 05/ago/2026. A lista de ~90 palavras proibidas do PDF vale em todo conteúdo público, sem abrir exceção nem para os conceitos-âncora antigos da marca (prisão de ouro, renda escrava, planejamento). Isso está implementado em render/lint.js e o render falha se algo passar.",
+    "proibido_tambem": [
+      "travessão",
+      "metáfora",
+      "emoji",
+      "hashtag",
+      "CTA nos slides"
+    ],
+    "estrutura": [
+      "abertura factual ou numérica",
+      "contraste ou virada",
+      "consequência ou generalização",
+      "fecho de impacto"
+    ]
+  },
+  "temas": {
+    "mix": {
+      "dor_ampla": 0.85,
+      "estrutura_patrimonial": 0.15
+    },
+    "_nota_mix": "Decisão do Daniel em 05/ago/2026: seguir o registro dos perfis de referência. Dor ampla (Brasil, tributo, esforço não reconhecido, valores invertidos, provedor) puxa alcance.",
+    "_risco_monitorado": "Dor ampla atrai público fora do ICP. Sinal de alerta: seguidores crescendo enquanto media_profile_visits e qualidade do DM caem. Se aparecer, subir a fatia de estrutura patrimonial."
+  },
+  "legenda": {
+    "tamanho_alvo_palavras": 30,
+    "hashtags": 0,
+    "_nota_hashtags": "Metricool (24,3M posts): posts com pelo menos 1 hashtag tiveram 31,7% menos views. O Instagram indexa o texto da legenda — palavra-chave em linguagem natural vale mais que hashtag.",
+    "cta_nos_slides": false,
+    "cta_na_legenda": "somente pergunta de fechamento",
+    "_nota_cta": "Decisão do Daniel em 05/ago/2026. O PDF proíbe CTA; a pergunta de fechamento rende +37% em comentários sem soar como pedido. Pedido explícito de save e curtida seguem proibidos.",
+    "cta_proibido": [
+      "pedir curtida",
+      "pedir save explicitamente",
+      "segue aí",
+      "comenta aí",
+      "link na bio",
+      "escassez fabricada",
+      "promessa de retorno"
+    ]
+  },
+  "aprendizado": {
+    "metrica_norte": "sends_per_reach",
+    "_nota_metrica": "Mosseri declarou publicamente que sends per reach é o indicador que ele olharia. Windsor entrega media_shares e media_reach — a divisão é direta.",
+    "metricas_secundarias": [
+      "saves_per_reach",
+      "media_follows",
+      "media_profile_visits"
+    ],
+    "janela_de_leitura_dias": 3,
+    "_nota_janela": "76% das views de post estático/carrossel acontecem nos 3 primeiros dias.",
+    "revisao_da_base": "semanal, toda segunda-feira"
+  },
+  "benchmark": {
+    "ativo": true,
+    "fonte": "apify",
+    "ator": "apify/instagram-scraper",
+    "frequencia": "semanal",
+    "perfis": [
+      "umantoniodasilva",
+      "bruno_perini",
+      "thiago.nigro"
+    ],
+    "_nota_perfis": "Lista corrigida pelo Daniel em 05/ago/2026. A lista anterior (holding/contábil) foi descartada. O critério aqui não é nicho, é performance no formato de crença escrita — @umantoniodasilva não é do nicho e entra por causa do formato. Daniel vai completar a lista.",
+    "_extrair": "hook literal, estrutura de linhas, tema por trás da dor, e o que ficou abaixo da mediana do próprio perfil. Nunca copiar texto: reescrita rasa também cai na penalização de conteúdo não-original de abr/2026."
+  },
+  "imagens": {
+    "banco_proprio": {
+      "provedor": "Google Drive (já conectado, sem necessidade de compartilhar)",
+      "pasta": "Conteúdos Instagram / Banco de imagens",
+      "folder_id": "1y5BJ3hGBUrIZ3DXMm_gvn1kMFTj3XHMC",
+      "_nota": "Existe uma segunda pasta 'Banco de imagens ' (com espaço no fim) na raiz do Drive, id 1hQyIzz9ogr0ZAaDVjJGy8Uy8WUSiUk26. Consolidar em uma só para evitar ambiguidade."
+    },
+    "banco_apoio": "Pexels API",
+    "_nota_pexels": "Doc de marca proíbe stock photography. Uso restrito a textura/fundo abstrato. Nunca foto de pessoa."
+  },
+  "hospedagem": {
+    "provedor": "github+jsdelivr",
+    "repo": "danieldominuspatrimonial/atlas-cdn",
+    "branch": "main"
+  }
+}

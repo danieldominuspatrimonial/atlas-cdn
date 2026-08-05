@@ -1,0 +1,43 @@
+{
+  "slug": "quem-produz-paga-a-conta",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Formato: crença escrita. Registro: dor ampla. Confirmar o número do slide 1 (Dia da Liberdade Tributária, IBPT) antes de publicar.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "O brasileiro trabalha até o fim de maio só para pagar tributo\n\nDe janeiro a maio, tudo que você produziu foi para o Estado\n\nJunho é o primeiro mês do ano em que você trabalha para você"
+    },
+    {
+      "type": "tweet",
+      "text": "Você recolhe sobre o faturamento, sobre o lucro, sobre a folha, sobre o imóvel, sobre o veículo, taxa de fiscalização, contribuição de classe\n\nE quando precisa de justiça rápida ou segurança na sua empresa, resolve sozinho"
+    },
+    {
+      "type": "tweet",
+      "size": "lg",
+      "text": "Quem produz sustenta a conta\n\nQuem não produz recebe o benefício\n\nE ainda dizem que o produtor é o privilegiado"
+    },
+    {
+      "type": "tweet",
+      "text": "Você abre a empresa, contrata, paga salário no dia certo, recolhe tudo\n\nTem mês que sobra menos para você do que para a pessoa que você contratou\n\nQuase todo dono de empresa já fez essa conta em silêncio"
+    },
+    {
+      "type": "tweet",
+      "text": "Homem casado, com filhos que dependem dele e princípios que ele não negocia, é o tipo mais difícil de derrubar\n\nEle não precisa de discurso\n\nEle já tem motivo"
+    },
+    {
+      "type": "tweet",
+      "size": "lg",
+      "text": "O sistema não vai te recompensar por trabalhar mais\n\nEle foi construído para cobrar mais de quem trabalha mais",
+      "engagement": { "reply": "", "repost": "", "like": "", "save": "", "share": "" }
+    }
+  ],
+  "caption": "Você trabalha metade do ano só para recolher tributo e ainda te chamam de privilegiado.\n\nQuantos meses do seu ano vão embora antes de sobrar alguma coisa para você?"
+}

@@ -1,0 +1,53 @@
+name: Renovar token do Instagram
+
+# O token de longa duração vale 60 dias. Este workflow renova toda segunda-feira,
+# então ele nunca chega perto de expirar.
+#
+# Para a renovação ser automática, crie um Fine-grained Personal Access Token com
+# permissão "Secrets: Read and write" neste repositório e salve como o segredo GH_PAT.
+# Sem o GH_PAT o workflow ainda roda, mostra o token novo no resumo da execução e
+# falha de propósito, para você colar o valor à mão em Settings > Secrets.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 9 * * 1'   # segunda-feira, 6h de Brasília
+
+jobs:
+  renovar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Trocar o token
+        id: troca
+        env:
+          APP_ID: ${{ secrets.META_APP_ID }}
+          APP_SECRET: ${{ secrets.META_APP_SECRET }}
+          ATUAL: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: |
+          RESP=$(curl -sS -G "https://graph.facebook.com/v26.0/oauth/access_token" \
+            --data-urlencode "grant_type=fb_exchange_token" \
+            --data-urlencode "client_id=$APP_ID" \
+            --data-urlencode "client_secret=$APP_SECRET" \
+            --data-urlencode "fb_exchange_token=$ATUAL")
+          NOVO=$(echo "$RESP" | python3 -c "import sys,json;print(json.load(sys.stdin).get('access_token',''))")
+          if [ -z "$NOVO" ]; then
+            echo "Falha ao renovar. Resposta da Meta:"
+            echo "$RESP"
+            exit 1
+          fi
+          echo "::add-mask::$NOVO"
+          echo "novo=$NOVO" >> $GITHUB_OUTPUT
+
+      - name: Gravar o novo token no segredo
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+          NOVO: ${{ steps.troca.outputs.novo }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "GH_PAT não configurado. Gere um novo token à mão e atualize o segredo IG_ACCESS_TOKEN."
+            exit 1
+          fi
+          printf '%s' "$NOVO" | gh secret set IG_ACCESS_TOKEN --repo "${{ github.repository }}"
+          echo "Token renovado por mais 60 dias."
