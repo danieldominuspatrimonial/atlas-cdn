@@ -1,3 +1,6 @@
 node_modules/
 .env
 out/
+# fotos brutas: ficam só no seu Mac, nunca no repositório
+render/assets/originais/
+tmp-contato/
