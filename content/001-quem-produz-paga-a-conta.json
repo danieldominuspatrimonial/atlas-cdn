@@ -9,11 +9,11 @@
     "avatar": "render/assets/avatar.jpg",
     "verified": true
   },
-  "_registro": "Formato: crença escrita. Registro: dor ampla. Confirmar o número do slide 1 (Dia da Liberdade Tributária, IBPT) antes de publicar.",
+  "_registro": "Registro: dor ampla. Numero do slide 1 conferido: IBPT, 150 dias, 30/mai/2026.",
   "slides": [
     {
       "type": "tweet",
-      "text": "O brasileiro trabalha até o fim de maio só para pagar tributo\n\nDe janeiro a maio, tudo que você produziu foi para o Estado\n\nJunho é o primeiro mês do ano em que você trabalha para você"
+      "text": "O brasileiro trabalhou 150 dias em 2026 só para pagar tributo\n\nDe janeiro a 30 de maio, tudo que você produziu foi para o Estado\n\nJunho foi o primeiro mês do ano em que você trabalhou para você"
     },
     {
       "type": "tweet",
