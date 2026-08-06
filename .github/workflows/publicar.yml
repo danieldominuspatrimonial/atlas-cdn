@@ -75,9 +75,15 @@ jobs:
             echo "vazio=true" >> $GITHUB_OUTPUT
             exit 0
           fi
+          # O nome do arquivo tem prefixo numerico (001-...) para controlar a ordem
+          # da fila, mas o render grava a saida em out/<slug>, e o slug vem de
+          # DENTRO do JSON, sem o prefixo. Ler o slug do arquivo e o unico jeito
+          # correto de saber onde os slides vao parar.
+          SLUG=$(node -p "require('./$ALVO').slug")
           echo "escolhido: $ALVO"
+          echo "slug: $SLUG"
           echo "alvo=$ALVO" >> $GITHUB_OUTPUT
-          echo "slug=$(basename $ALVO .json)" >> $GITHUB_OUTPUT
+          echo "slug=$SLUG" >> $GITHUB_OUTPUT
 
       - name: Validar e renderizar
         if: steps.fila.outputs.vazio != 'true'

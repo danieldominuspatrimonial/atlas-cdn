@@ -124,6 +124,16 @@ async function mostrarCota(igUser, token) {
   if (!alvo) morre('uso: node publish/publish.js out/<slug> [--dry-run]');
 
   const pasta = path.isAbsolute(alvo) ? alvo : path.join(raiz, alvo);
+  if (!fs.existsSync(path.join(pasta, 'meta.json'))) {
+    const dirOut = path.join(raiz, 'out');
+    const existentes = fs.existsSync(dirOut) ? fs.readdirSync(dirOut).join(', ') : '(out/ nao existe)';
+    morre(
+      `nao encontrei ${path.join(alvo, 'meta.json')}.\n` +
+        `  Pastas que existem em out/: ${existentes}\n` +
+        `  Lembrete: o render grava em out/<slug>, e o slug vem de dentro do JSON,\n` +
+        `  nao do nome do arquivo (que tem o prefixo numerico da fila).`
+    );
+  }
   const meta = JSON.parse(fs.readFileSync(path.join(pasta, 'meta.json'), 'utf8'));
   const slug = meta.slug;
   const legenda = meta.caption || '';
