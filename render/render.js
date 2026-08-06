@@ -8,6 +8,7 @@ const { chromium } = require('playwright');
 const sharp = require('sharp');
 const { buildHTML } = require('./template');
 const { lint } = require('./lint');
+const crypto = require('crypto');
 
 // Instagram aceita até 1440px de largura. Renderizamos o dobro disso e reduzimos
 // com Lanczos: o texto fica com bordas muito mais limpas do que renderizando
@@ -28,6 +29,10 @@ const QUALIDADE = 95;
   const carousel = JSON.parse(fs.readFileSync(input, 'utf8'));
   const slug = carousel.slug || path.basename(input, '.json');
   const outDir = path.join(__dirname, '..', 'out', slug);
+  // A pasta e ESVAZIADA antes de cada render. Sem isso, um carrossel que antes
+  // tinha 8 slides e agora tem 6 deixa 07.jpg e 08.jpg para tras, e o publish
+  // acaba mandando duas imagens da versao antiga junto com as novas.
+  fs.rmSync(outDir, { recursive: true, force: true });
   fs.mkdirSync(outDir, { recursive: true });
 
   const problems = lint(carousel);
@@ -92,10 +97,31 @@ const QUALIDADE = 95;
 
   await browser.close();
 
+  // O meta.json e o contrato entre render e publish. Ele guarda a impressao
+  // digital do arquivo de origem e de cada imagem, para o publish conseguir
+  // provar que esta publicando exatamente o que foi renderizado, na ordem certa.
+  const hash = (b) => crypto.createHash('sha256').update(b).digest('hex').slice(0, 16);
   fs.writeFileSync(
     path.join(outDir, 'meta.json'),
     JSON.stringify(
-      { slug, caption: carousel.caption || '', files: files.map((f) => path.basename(f)), generated_at: new Date().toISOString() },
+      {
+        slug,
+        caption: carousel.caption || '',
+        origem: path.relative(path.join(__dirname, '..'), path.resolve(input)),
+        origem_hash: hash(fs.readFileSync(input)),
+        total_slides: carousel.slides.length,
+        files: files.map((f, i) => ({
+          nome: path.basename(f),
+          ordem: i + 1,
+          hash: hash(fs.readFileSync(f)),
+          // primeira linha do slide, para conferencia humana no log
+          previa: (carousel.slides[i].text || carousel.slides[i].value || carousel.slides[i].label || '')
+            .split('\n')[0]
+            .slice(0, 60),
+          foto: carousel.slides[i].image ? path.basename(carousel.slides[i].image) : null,
+        })),
+        generated_at: new Date().toISOString(),
+      },
       null,
       2
     )

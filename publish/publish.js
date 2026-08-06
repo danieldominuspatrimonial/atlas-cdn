@@ -22,6 +22,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const GRAPH = 'https://graph.facebook.com/v26.0';
 const MAX_ITENS = 10;
@@ -122,6 +123,108 @@ async function mostrarCota(igUser, token) {
   }
 }
 
+// ------------------------------------------------------------- conferencia
+const hash = (b) => crypto.createHash('sha256').update(b).digest('hex').slice(0, 16);
+
+/**
+ * Dupla validação antes de publicar. Nada sai daqui sem passar por tudo isto:
+ *
+ *   1. a pasta tem EXATAMENTE os arquivos que o render declarou, sem sobra
+ *   2. a numeracao vai de 01 ate N sem buraco e sem repeticao
+ *   3. cada imagem tem a mesma impressao digital de quando foi renderizada
+ *   4. o arquivo de conteudo nao mudou depois do render
+ *   5. a legenda no meta.json e a mesma do arquivo de conteudo
+ *   6. a legenda cabe no limite da Meta e nao tem hashtag nem emoji
+ *
+ * Os itens 1 e 2 existem porque a falha mais provavel e silenciosa: uma imagem
+ * de uma versao anterior sobrando na pasta e entrando no carrossel sem aviso.
+ */
+function conferir(pasta, meta, raiz) {
+  const erros = [];
+  const declarados = meta.files || [];
+
+  if (!Array.isArray(declarados) || !declarados.length || typeof declarados[0] !== 'object') {
+    morre('meta.json em formato antigo. Rode o render de novo antes de publicar.');
+  }
+
+  // 1. nada a mais, nada a menos
+  const naPasta = fs.readdirSync(pasta).filter((f) => f.endsWith('.jpg')).sort();
+  const esperados = declarados.map((d) => d.nome).sort();
+  for (const f of naPasta) {
+    if (!esperados.includes(f)) erros.push(`${f} está na pasta mas NÃO foi renderizado nesta versão (sobra de um render anterior)`);
+  }
+  for (const f of esperados) {
+    if (!naPasta.includes(f)) erros.push(`${f} foi renderizado mas sumiu da pasta`);
+  }
+
+  // 2. sequencia sem buraco
+  const ordens = declarados.map((d) => d.ordem).sort((x, y) => x - y);
+  ordens.forEach((o, i) => {
+    if (o !== i + 1) erros.push(`a numeração dos slides está furada: esperava ${i + 1}, achei ${o}`);
+  });
+  if (declarados.length !== meta.total_slides) {
+    erros.push(`meta.json diz ${meta.total_slides} slides mas lista ${declarados.length} arquivos`);
+  }
+  if (declarados.length < 2 || declarados.length > MAX_ITENS) {
+    erros.push(`o carrossel precisa de 2 a ${MAX_ITENS} imagens (tem ${declarados.length})`);
+  }
+
+  // 3. cada imagem e a que foi renderizada, e cabe no limite
+  for (const d of declarados) {
+    const caminho = path.join(pasta, d.nome);
+    if (!fs.existsSync(caminho)) continue;
+    const bytes = fs.readFileSync(caminho);
+    if (hash(bytes) !== d.hash) erros.push(`${d.nome} foi alterado depois do render`);
+    const mb = bytes.length / 1024 / 1024;
+    if (mb > MAX_MB) erros.push(`${d.nome} tem ${mb.toFixed(1)} MB (limite da Meta: ${MAX_MB} MB)`);
+  }
+
+  // 4 e 5. o conteudo e a legenda nao mudaram depois do render
+  if (meta.origem) {
+    const origem = path.join(raiz, meta.origem);
+    if (!fs.existsSync(origem)) {
+      erros.push(`o arquivo de origem ${meta.origem} não existe mais`);
+    } else {
+      const bruto = fs.readFileSync(origem);
+      if (hash(bruto) !== meta.origem_hash) {
+        erros.push(`${meta.origem} foi editado DEPOIS do render. Renderize de novo antes de publicar.`);
+      }
+      const json = JSON.parse(bruto.toString('utf8'));
+      if ((json.caption || '') !== (meta.caption || '')) {
+        erros.push('a legenda do meta.json não bate com a do arquivo de conteúdo');
+      }
+      if (json.slides.length !== declarados.length) {
+        erros.push(`o conteúdo tem ${json.slides.length} slides mas foram renderizadas ${declarados.length} imagens`);
+      }
+    }
+  }
+
+  // 6. legenda dentro das regras
+  const cap = meta.caption || '';
+  if (cap.length > 2200) erros.push(`a legenda tem ${cap.length} caracteres (limite da Meta: 2200)`);
+  if (/(^|\s)#\w/.test(cap)) erros.push('a legenda tem hashtag (a configuração define zero)');
+  if (/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(cap)) erros.push('a legenda tem emoji');
+
+  // relatorio legivel: a ordem exata que vai ao ar
+  console.log('\n  conferência da sequência:');
+  for (const d of declarados.sort((x, y) => x.ordem - y.ordem)) {
+    const foto = d.foto ? `  [foto: ${d.foto}]` : '';
+    console.log(`    ${String(d.ordem).padStart(2, '0')}. ${d.nome}  "${d.previa}"${foto}`);
+  }
+  console.log(`\n  legenda (${cap.length} caracteres):`);
+  console.log(cap.split('\n').map((l) => `    ${l}`).join('\n'));
+
+  if (erros.length) {
+    console.error(`\nREPROVADO na conferência (${erros.length}):`);
+    erros.forEach((e) => console.error(`  ✗ ${e}`));
+    console.error('\nNada foi publicado.');
+    process.exit(1);
+  }
+  console.log('\n  conferência: aprovada');
+
+  return declarados.sort((x, y) => x.ordem - y.ordem).map((d) => path.join(pasta, d.nome));
+}
+
 // ------------------------------------------------------------------ main
 (async () => {
   const raiz = path.join(__dirname, '..');
@@ -144,19 +247,7 @@ async function mostrarCota(igUser, token) {
   const slug = meta.slug;
   const legenda = meta.caption || '';
 
-  const imagens = fs
-    .readdirSync(pasta)
-    .filter((f) => f.endsWith('.jpg'))
-    .sort()
-    .map((f) => path.join(pasta, f));
-
-  if (imagens.length < 2 || imagens.length > MAX_ITENS) {
-    morre(`o carrossel precisa de 2 a ${MAX_ITENS} imagens (encontrei ${imagens.length}).`);
-  }
-  for (const img of imagens) {
-    const mb = fs.statSync(img).size / 1024 / 1024;
-    if (mb > MAX_MB) morre(`${path.basename(img)} tem ${mb.toFixed(1)} MB (limite da Meta: ${MAX_MB} MB).`);
-  }
+  const imagens = conferir(pasta, meta, raiz);
 
   const igUser = env('IG_USER_ID');
   const token = env('IG_ACCESS_TOKEN');
