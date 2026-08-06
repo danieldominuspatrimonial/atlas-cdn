@@ -1,5 +1,5 @@
 {
-  "_comentario": "Configuração do agente de carrosséis Atlas Co. Editar aqui muda o comportamento do agente.",
+  "_comentario": "Retrato da configuração do agente. ATENÇÃO: nenhum script lê este arquivo. Ele documenta as decisões; quem manda de verdade é o .github/workflows/publicar.yml, o render/lint.js e o render/render.js. Ao mudar algo aqui, mude no código também.",
   "volume": {
     "carrosseis_por_dia": 2,
     "horarios_de_publicacao": [
@@ -7,8 +7,10 @@
       "21:00"
     ],
     "cron_utc": [
-      "0 15 * * *",
-      "0 0 * * *"
+      "7 15 * * *",
+      "47 15 * * *",
+      "7 0 * * *",
+      "47 0 * * *"
     ],
     "dias_ativos": [
       "seg",
@@ -20,7 +22,8 @@
       "dom"
     ],
     "_nota_volume": "Decisao do Daniel em 05/ago/2026: 2 por dia para acelerar o aprendizado. 14 pontos de dado por semana em vez de 7. Buffer (2,1M posts) nao encontra canibalizacao de alcance por volume nessa faixa de seguidores, e o gargalo do aprendizado e quantidade de amostra, nao frequencia.",
-    "_consumo_da_fila": "2 por dia. A fila precisa de 14 carrosseis para cobrir uma semana."
+    "_consumo_da_fila": "2 por dia. A fila precisa de 14 carrosseis para cobrir uma semana.",
+    "_nota_cron": "Duas tentativas por horário e nenhuma no minuto :00. O agendamento do GitHub pode atrasar ou ser descartado, e o :00 é o minuto mais concorrido. A repescagem só publica se a principal não tiver acontecido."
   },
   "aprovacao": {
     "modo": "aprovar_antes",
@@ -29,18 +32,20 @@
       "automatico"
     ],
     "trocar_para_automatico_apos": "3 carrosséis seguidos aprovados sem edição",
-    "canal": "entrega dos JPEGs + legenda nesta conversa para o Daniel aprovar"
+    "canal": "entrega dos JPEGs + legenda nesta conversa para o Daniel aprovar",
+    "_estado_real": "Hoje a publicação é automática pelo agendamento. A aprovação prévia acontece quando o Daniel revisa os previews antes do push da fila."
   },
   "formato": {
-    "slides_min": 5,
-    "slides_max": 8,
-    "_nota_slides": "Máximo técnico da Graph API é 10.",
+    "slides_min": 2,
+    "slides_max": 10,
+    "_nota_slides": "Limite técnico da Graph API, que é o que o validador aplica. A faixa editorial recomendada continua sendo 5 a 8.",
     "aspect": "4:5",
-    "dimensoes": "1080x1350",
+    "dimensoes": "1440x1800",
     "_nota_aspect": "Decisão do Daniel em 05/ago/2026. O modelo original era 1:1; 4:5 ocupa 25% mais tela vertical no feed. Trocar para 1:1 é mudar um campo no JSON do carrossel.",
-    "arquivo": "JPEG qualidade 92",
+    "arquivo": "JPEG qualidade 95, sem subamostragem de cor (4:4:4)",
     "estilo": "print de tweet, fundo branco",
-    "avatar": "render/assets/avatar.jpg"
+    "avatar": "render/assets/avatar.jpg",
+    "_nota_dimensoes": "Renderiza em 2160 de largura e reduz com Lanczos. 1440 é a maior largura que o Instagram aceita."
   },
   "voz": {
     "prompt_base": "PROMPT Crença Escrita (Daniel, ago/2026)",
@@ -115,14 +120,17 @@
       "provedor": "Google Drive (já conectado, sem necessidade de compartilhar)",
       "pasta": "Conteúdos Instagram / Banco de imagens",
       "folder_id": "1y5BJ3hGBUrIZ3DXMm_gvn1kMFTj3XHMC",
-      "_nota": "Existe uma segunda pasta 'Banco de imagens ' (com espaço no fim) na raiz do Drive, id 1hQyIzz9ogr0ZAaDVjJGy8Uy8WUSiUk26. Consolidar em uma só para evitar ambiguidade."
+      "_nota": "Existe uma segunda pasta 'Banco de imagens ' (com espaço no fim) na raiz do Drive, id 1hQyIzz9ogr0ZAaDVjJGy8Uy8WUSiUk26. Consolidar em uma só para evitar ambiguidade.",
+      "_nota_uso": "O folder_id do Drive é referência para humano. O render lê as fotos de render/assets/, e uma foto declarada que não existe agora FAZ O RENDER FALHAR."
     },
     "banco_apoio": "Pexels API",
     "_nota_pexels": "Doc de marca proíbe stock photography. Uso restrito a textura/fundo abstrato. Nunca foto de pessoa."
   },
   "hospedagem": {
-    "provedor": "github+jsdelivr",
-    "repo": "danieldominuspatrimonial/atlas-cdn",
-    "branch": "main"
+    "provedor": "o próprio repositório, servido por raw.githubusercontent",
+    "repo": "o mesmo repositório do workflow (github.repository), não configurável",
+    "_nota": "O jsDelivr foi abandonado: ele só busca o arquivo no GitHub na primeira vez que alguém pede, e a Meta pede a imagem segundos depois do commit. Nessa janela o CDN pode responder 404. IMPORTANTE: isso exige que o repositório seja PÚBLICO, senão a Meta não baixa as imagens.",
+    "caminho": "carrosseis/<slug>/NN.jpg, com a URL fixada no SHA do commit",
+    "marcador": "carrosseis/<slug>/published.json prova que o slug já foi ao ar e impede republicação"
   }
 }

@@ -30,19 +30,27 @@ const MAX_MB = 8;
 
 function env(chave) {
   const v = process.env[chave];
-  if (!v) {
-    console.error(`ERRO: variável de ambiente ${chave} não definida.`);
-    process.exit(1);
-  }
+  if (!v) morre(`variável de ambiente ${chave} não definida.`);
   return v;
 }
 
 function morre(msg) {
-  console.error(`\nERRO: ${msg}`);
-  process.exit(1);
+  // process.exit() nao espera o flush do stdout, e no Actions a saida e um pipe:
+  // a propria mensagem de erro podia sumir do log da execucao que falhou.
+  process.stderr.write(`\nERRO: ${msg}\n`);
+  process.exitCode = 1;
+  throw new SaidaControlada();
+}
+class SaidaControlada extends Error {
+  constructor() { super('saida controlada'); this.name = 'SaidaControlada'; }
 }
 
 const espera = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// Nenhuma chamada pode ficar pendurada: o grupo de concorrencia e unico, entao
+// um fetch travado bloqueia os horarios seguintes do dia inteiro.
+const TIMEOUT = 30000;
+const buscar = (url, opts = {}) => fetch(url, { ...opts, signal: AbortSignal.timeout(TIMEOUT) });
 
 // ------------------------------------------------------------- hospedagem
 async function subirParaGitHub(arquivoLocal, caminhoRemoto) {
@@ -58,7 +66,7 @@ async function subirParaGitHub(arquivoLocal, caminhoRemoto) {
 
   // Se o arquivo já existe, a API exige o sha da versão anterior.
   let sha = null;
-  const atual = await fetch(`${api}?ref=${encodeURIComponent(branch)}`, { headers });
+  const atual = await buscar(`${api}?ref=${encodeURIComponent(branch)}`, { headers });
   if (atual.status === 200) sha = (await atual.json()).sha;
 
   const corpo = {
@@ -68,7 +76,7 @@ async function subirParaGitHub(arquivoLocal, caminhoRemoto) {
   };
   if (sha) corpo.sha = sha;
 
-  const r = await fetch(api, { method: 'PUT', headers, body: JSON.stringify(corpo) });
+  const r = await buscar(api, { method: 'PUT', headers, body: JSON.stringify(corpo) });
   if (r.status !== 200 && r.status !== 201) {
     morre(`upload para o GitHub falhou (${r.status}): ${(await r.text()).slice(0, 400)}`);
   }
@@ -87,7 +95,7 @@ async function subirParaGitHub(arquivoLocal, caminhoRemoto) {
 
 // -------------------------------------------------------------- graph api
 async function graphPost(caminho, dados) {
-  const r = await fetch(`${GRAPH}/${caminho}`, {
+  const r = await buscar(`${GRAPH}/${caminho}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams(dados).toString(),
@@ -100,10 +108,11 @@ async function graphPost(caminho, dados) {
 async function esperarPronto(containerId, token, limiteMs = 180000) {
   const inicio = Date.now();
   while (Date.now() - inicio < limiteMs) {
-    const r = await fetch(
+    const r = await buscar(
       `${GRAPH}/${containerId}?fields=status_code,status&access_token=${encodeURIComponent(token)}`
     );
     const j = await r.json().catch(() => ({}));
+    if (j.error) morre(`Graph API ao checar o container: ${JSON.stringify(j.error).slice(0, 300)}`);
     if (j.status_code === 'FINISHED') return;
     if (j.status_code === 'ERROR') morre(`container ${containerId} falhou: ${j.status}`);
     await espera(4000);
@@ -113,7 +122,7 @@ async function esperarPronto(containerId, token, limiteMs = 180000) {
 
 async function mostrarCota(igUser, token) {
   try {
-    const r = await fetch(
+    const r = await buscar(
       `${GRAPH}/${igUser}/content_publishing_limit?fields=quota_usage,config&access_token=${encodeURIComponent(token)}`
     );
     const d = (await r.json()).data?.[0];
@@ -136,19 +145,44 @@ async function mostrarCota(igUser, token) {
  */
 async function jaPublicouRecentemente(igUser, token, horas) {
   try {
-    const r = await fetch(
-      `${GRAPH}/${igUser}/media?fields=id,timestamp,media_type&limit=10&access_token=${encodeURIComponent(token)}`
+    const r = await buscar(
+      `${GRAPH}/${igUser}/media?fields=id,timestamp,media_type&limit=25&access_token=${encodeURIComponent(token)}`
     );
-    const dados = (await r.json()).data || [];
-    const ultimo = dados.find((m) => m.media_type === 'CAROUSEL_ALBUM');
+    const j = await r.json();
+    // Antes isto nao existia: um 429 devolvia {error}, `.data` virava [], e a
+    // guarda concluia "pode publicar" logo depois de um post ter saido.
+    if (!r.ok || j.error) throw new Error(`HTTP ${r.status} ${JSON.stringify(j.error || {}).slice(0, 200)}`);
+    const ultimo = (j.data || []).find((m) => m.media_type === 'CAROUSEL_ALBUM');
     if (!ultimo) return null;
     const horasAtras = (Date.now() - new Date(ultimo.timestamp).getTime()) / 3600000;
     return horasAtras < horas ? { horasAtras, quando: ultimo.timestamp } : null;
   } catch (e) {
-    // Se a consulta falhar, seguimos em frente: e melhor arriscar um post a
-    // mais do que deixar de publicar por causa de uma checagem opcional.
-    console.log(`  aviso: nao consegui checar o ultimo carrossel (${e.message})`);
-    return null;
+    // Falha FECHADO. Numa execucao agendada existe outra tentativa logo depois
+    // e mais um horario no mesmo dia; perder um slot custa menos que publicar
+    // o mesmo carrossel duas vezes no perfil.
+    return { indeterminado: true, motivo: e.message };
+  }
+}
+
+/**
+ * Marcador de publicacao, gravado no proprio repositorio.
+ *
+ * A guarda por tempo sozinha nao resolve o pior caso: se o post sai as 12h07 e
+ * o arquivamento falha, o mesmo JSON continua sendo o primeiro da fila, e as
+ * 21h07 a janela de 5h ja expirou. O carrossel iria ao ar de novo, todo dia,
+ * ate alguem mexer a mao. O marcador amarra a checagem ao SLUG, nao ao relogio.
+ */
+async function jaFoiPublicado(slug) {
+  const repo = env('GH_REPO');
+  const token = env('GH_TOKEN');
+  try {
+    const r = await buscar(
+      `https://api.github.com/repos/${repo}/contents/carrosseis/${slug}/published.json`,
+      { headers: { Authorization: `Bearer ${token}`, 'User-Agent': 'atlas-agente' } }
+    );
+    return r.status === 200;
+  } catch {
+    return false;
   }
 }
 
@@ -244,10 +278,11 @@ function conferir(pasta, meta, raiz) {
   console.log(cap.split('\n').map((l) => `    ${l}`).join('\n'));
 
   if (erros.length) {
-    console.error(`\nREPROVADO na conferência (${erros.length}):`);
-    erros.forEach((e) => console.error(`  ✗ ${e}`));
-    console.error('\nNada foi publicado.');
-    process.exit(1);
+    process.stderr.write(`\nREPROVADO na conferência (${erros.length}):\n`);
+    erros.forEach((e) => process.stderr.write(`  ✗ ${e}\n`));
+    process.stderr.write('\nNada foi publicado.\n');
+    process.exitCode = 1;
+    throw new SaidaControlada();
   }
   console.log('\n  conferência: aprovada');
 
@@ -288,13 +323,33 @@ function conferir(pasta, meta, raiz) {
   const idx = process.argv.indexOf('--pular-se-publicou-em');
   if (idx !== -1 && !dryRun) {
     const janela = Number(process.argv[idx + 1]);
+    if (!Number.isFinite(janela) || janela <= 0) {
+      morre('--pular-se-publicou-em exige um número de horas, ex.: --pular-se-publicou-em 5');
+    }
+
+    // Guarda 1, por conteúdo: este slug já foi ao ar alguma vez?
+    if (await jaFoiPublicado(slug)) {
+      console.log(`\n  ${slug} já tem marcador de publicação no repositório.`);
+      console.log('  Nada publicado. Mova o JSON de content/ para publicados/ para liberar a fila.');
+      process.exitCode = 78;
+      return;
+    }
+
+    // Guarda 2, por tempo: evita post duplo entre tentativa e repescagem.
     const recente = await jaPublicouRecentemente(igUser, token, janela);
+    if (recente?.indeterminado) {
+      console.log(`\n  não consegui confirmar o último carrossel (${recente.motivo}).`);
+      console.log('  Por segurança não publico. A próxima tentativa cobre este horário.');
+      process.exitCode = 78;
+      return;
+    }
     if (recente) {
       console.log(
         `\n  já saiu um carrossel há ${recente.horasAtras.toFixed(1)}h (${recente.quando}).` +
           `\n  Janela de ${janela}h ainda aberta, então esta execução não publica nada.`
       );
-      process.exit(78); // codigo neutro: nao e erro, e "nada a fazer"
+      process.exitCode = 78;
+      return;
     }
     console.log(`  nenhum carrossel nas últimas ${janela}h, pode publicar`);
   }
@@ -346,15 +401,29 @@ function conferir(pasta, meta, raiz) {
   const mediaId = publicado.id;
   let permalink = '';
   try {
-    const r = await fetch(`${GRAPH}/${mediaId}?fields=permalink&access_token=${encodeURIComponent(token)}`);
+    const r = await buscar(`${GRAPH}/${mediaId}?fields=permalink&access_token=${encodeURIComponent(token)}`);
     permalink = (await r.json()).permalink || '';
   } catch {
     /* o post já foi publicado; o link é só conveniência */
   }
 
-  fs.writeFileSync(
-    path.join(pasta, 'published.json'),
-    JSON.stringify({ media_id: mediaId, permalink, published_at: new Date().toISOString() }, null, 2)
-  );
+  const registro = { media_id: mediaId, permalink, published_at: new Date().toISOString() };
+  fs.writeFileSync(path.join(pasta, 'published.json'), JSON.stringify(registro, null, 2));
+
+  // Marcador no repositorio. E o que impede a republicacao quando o
+  // arquivamento falha depois do post ja ter ido ao ar.
+  try {
+    const arquivo = path.join(pasta, 'published.json');
+    await subirParaGitHub(arquivo, `carrosseis/${slug}/published.json`);
+    console.log('  marcador de publicação gravado no repositório');
+  } catch (e) {
+    console.error(`  AVISO: não consegui gravar o marcador (${e.message}).`);
+    console.error('  Mova o JSON de content/ para publicados/ à mão, senão ele pode repetir.');
+  }
+
   console.log(`\nPUBLICADO: ${permalink || mediaId}`);
-})();
+})().catch((e) => {
+  if (e instanceof SaidaControlada) return;      // morre() ja imprimiu e setou o codigo
+  process.stderr.write(`\nERRO inesperado: ${e && e.stack ? e.stack : e}\n`);
+  process.exitCode = 1;
+});

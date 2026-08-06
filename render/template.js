@@ -21,6 +21,12 @@ const FONTS = [
   face(400, 'italic'), face(600, 'italic'),
 ].join('\n');
 
+// Se o pacote da fonte mudar de estrutura, `face()` devolve vazio para todos os
+// pesos e o carrossel iria ao ar em system-ui, sem erro nenhum. Melhor quebrar.
+if (!FONTS.includes('@font-face')) {
+  throw new Error('nenhuma fonte Nunito encontrada em node_modules/@fontsource/nunito/files');
+}
+
 const C = {
   bg: '#FFFFFF',
   text: '#0F1419',
@@ -54,9 +60,15 @@ function rich(text) {
     .join('');
 }
 
-function dataURL(p) {
+function dataURL(p, obrigatorio = false) {
   const abs = path.isAbsolute(p) ? p : path.join(ROOT, p);
-  if (!fs.existsSync(abs)) return null;
+  if (!fs.existsSync(abs)) {
+    // Uma foto declarada que nao existe precisa QUEBRAR. Antes ela sumia do
+    // slide sem aviso: o carrossel ia ao ar com um vazio enorme, porque o lint
+    // tinha aplicado o limite apertado de caracteres de slide com foto.
+    if (obrigatorio) throw new Error(`imagem declarada nao existe: ${p}`);
+    return null;
+  }
   const ext = (path.extname(abs).slice(1) || 'jpeg').toLowerCase().replace('jpg', 'jpeg');
   return `data:image/${ext};base64,${fs.readFileSync(abs).toString('base64')}`;
 }
@@ -93,7 +105,7 @@ function body(slide) {
 function buildHTML(carousel, slide, index) {
   const a = carousel.author || {};
   const H = carousel.aspect === '4:5' ? 1350 : 1080;
-  const img = slide.image ? dataURL(slide.image) : null;
+  const img = slide.image ? dataURL(slide.image, true) : null;
   const isLast = index === carousel.slides.length - 1;
   const swipe = !isLast && slide.swipe !== false && carousel.swipe !== false;
 

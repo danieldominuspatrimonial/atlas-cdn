@@ -28,12 +28,15 @@ const QUALIDADE = 95;
 
   const carousel = JSON.parse(fs.readFileSync(input, 'utf8'));
   const slug = carousel.slug || path.basename(input, '.json');
+
+  // Slug entra num rmSync recursivo mais abaixo. Sem esta trava, um slug de "."
+  // apagaria a pasta out/ inteira, e "../content" apagaria a fila.
+  if (!/^[a-z0-9-]+$/.test(slug)) {
+    console.error(`\nERRO: slug inválido ("${slug}"). Só letras minúsculas, números e hífen.`);
+    process.exitCode = 1;
+    return;
+  }
   const outDir = path.join(__dirname, '..', 'out', slug);
-  // A pasta e ESVAZIADA antes de cada render. Sem isso, um carrossel que antes
-  // tinha 8 slides e agora tem 6 deixa 07.jpg e 08.jpg para tras, e o publish
-  // acaba mandando duas imagens da versao antiga junto com as novas.
-  fs.rmSync(outDir, { recursive: true, force: true });
-  fs.mkdirSync(outDir, { recursive: true });
 
   const problems = lint(carousel);
   if (problems.length) {
@@ -47,6 +50,14 @@ const QUALIDADE = 95;
   } else {
     console.log('  validador: aprovado');
   }
+
+  // A pasta so e esvaziada agora, depois do validador. Se o lint reprovasse
+  // antes, apagar aqui destruiria o render anterior, que estava bom, e voce
+  // ficaria sem nada para inspecionar. Sem a limpeza, um carrossel que tinha 8
+  // slides e passou a ter 6 deixaria 07.jpg e 08.jpg para tras e o publish
+  // mandaria duas imagens da versao antiga junto com as novas.
+  fs.rmSync(outDir, { recursive: true, force: true });
+  fs.mkdirSync(outDir, { recursive: true });
 
   const H_CSS = carousel.aspect === '4:5' ? 1350 : 1080;
   const H_FINAL = Math.round((W_FINAL / W_CSS) * H_CSS);
@@ -68,18 +79,25 @@ const QUALIDADE = 95;
     await page.evaluate(() => document.fonts.ready);
     // Sem redução automática: a tipografia é a mesma em todo slide.
     // Se estourar, o render falha e diz quanto precisa ser cortado.
-    const excesso = await page.evaluate(
-      () => document.body.scrollHeight - document.body.clientHeight
-    );
+    // Mede a caixa de conteudo (.main) e a entrelinha real. Medir o body dava
+    // folga indevida: o texto so acusava estouro depois de invadir os 108px de
+    // margem inferior, que e justamente o respiro que a gente quer preservar.
+    const { excesso, entrelinha } = await page.evaluate(() => {
+      const main = document.querySelector('.main');
+      const txt = document.querySelector('.txt') || main;
+      const lh = parseFloat(getComputedStyle(txt).lineHeight) || 58;
+      return { excesso: Math.max(0, main.scrollHeight - main.clientHeight), entrelinha: lh };
+    });
     if (excesso > 1) {
-      const linhas = Math.ceil(excesso / 59);
+      const linhas = Math.ceil(excesso / entrelinha);
       console.error(
         `\nESTOUROU no slide ${i + 1}: ${excesso}px além da área segura (~${linhas} linha(s)).` +
           `\nCorte cerca de ${linhas * 36} caracteres. A tipografia não é reduzida de propósito,` +
           `\npara que todos os slides tenham exatamente o mesmo tamanho de letra.`
       );
       await browser.close();
-      process.exit(1);
+      process.exitCode = 1;
+      return;
     }
     const file = path.join(outDir, String(i + 1).padStart(2, '0') + '.jpg');
     const png = await page.screenshot({
@@ -118,7 +136,12 @@ const QUALIDADE = 95;
           previa: (carousel.slides[i].text || carousel.slides[i].value || carousel.slides[i].label || '')
             .split('\n')[0]
             .slice(0, 60),
-          foto: carousel.slides[i].image ? path.basename(carousel.slides[i].image) : null,
+          // So registra a foto se ela existe mesmo. Antes, um arquivo renomeado
+          // sumia do slide em silencio e o meta.json continuava afirmando que
+          // a foto estava la, fazendo o log de conferencia mentir.
+          foto: carousel.slides[i].image && fs.existsSync(path.join(__dirname, '..', carousel.slides[i].image))
+            ? path.basename(carousel.slides[i].image)
+            : null,
         })),
         generated_at: new Date().toISOString(),
       },
