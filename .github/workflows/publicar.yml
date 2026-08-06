@@ -24,10 +24,18 @@ on:
         type: boolean
         default: false
   schedule:
-    # Horários de Brasília (UTC-3), convertidos para UTC.
-    # O de 21h cruza a meia-noite em UTC, por isso vira 00:00 do dia seguinte.
-    - cron: '0 15 * * *'   # 12h
-    - cron: '0 0 * * *'    # 21h
+    # Horários de Brasília (UTC-3) convertidos para UTC. O de 21h cruza a
+    # meia-noite em UTC, por isso vira 00h do dia seguinte.
+    #
+    # Duas tentativas por horário, e nenhuma no minuto :00. A GitHub avisa na
+    # própria documentação que disparos agendados podem atrasar ou ser
+    # DESCARTADOS em períodos de carga, e o minuto :00 é o mais concorrido.
+    # A segunda tentativa só publica se a primeira não tiver acontecido, porque
+    # o publish pergunta à Meta quando saiu o último carrossel antes de agir.
+    - cron: '7 15 * * *'    # 12h07
+    - cron: '47 15 * * *'   # 12h47, repescagem
+    - cron: '7 0 * * *'     # 21h07
+    - cron: '47 0 * * *'    # 21h47, repescagem
 
 concurrency:
   group: publicar
@@ -110,6 +118,7 @@ jobs:
           retention-days: 14
 
       - name: Publicar
+        id: publicacao
         if: steps.fila.outputs.vazio != 'true'
         env:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
@@ -120,12 +129,29 @@ jobs:
         run: |
           if [ "${{ inputs.dry_run }}" = "true" ]; then
             node publish/publish.js "out/${{ steps.fila.outputs.slug }}" --dry-run
-          else
-            node publish/publish.js "out/${{ steps.fila.outputs.slug }}"
+            exit 0
           fi
 
+          # Nas execuções agendadas a guarda de 5h evita post duplo entre a
+          # tentativa principal e a repescagem. Em execução manual não há
+          # guarda: se você mandou publicar, publica.
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            set +e
+            node publish/publish.js "out/${{ steps.fila.outputs.slug }}" --pular-se-publicou-em 5
+            CODIGO=$?
+            set -e
+            if [ $CODIGO -eq 78 ]; then
+              echo "pulou=true" >> $GITHUB_OUTPUT
+              echo "Já havia carrossel recente. Nada publicado nesta execução." >> $GITHUB_STEP_SUMMARY
+              exit 0
+            fi
+            exit $CODIGO
+          fi
+
+          node publish/publish.js "out/${{ steps.fila.outputs.slug }}"
+
       - name: Arquivar o carrossel publicado
-        if: steps.fila.outputs.vazio != 'true' && inputs.dry_run != true
+        if: steps.fila.outputs.vazio != 'true' && inputs.dry_run != true && steps.publicacao.outputs.pulou != 'true'
         run: |
           mkdir -p publicados
           git config --global --add safe.directory "$GITHUB_WORKSPACE"

@@ -123,6 +123,35 @@ async function mostrarCota(igUser, token) {
   }
 }
 
+// ------------------------------------------------------------------ guarda
+/**
+ * O agendamento do GitHub Actions nao e confiavel: a documentacao da propria
+ * GitHub avisa que disparos agendados podem atrasar ou ser descartados em
+ * periodos de carga, e o minuto :00 e o mais concorrido de todos.
+ *
+ * A solucao e agendar mais de uma tentativa por horario e tornar a publicacao
+ * idempotente: antes de publicar, o agente pergunta a Meta quando foi o ultimo
+ * carrossel da conta. Se ja saiu um dentro da janela, ele sai sem fazer nada.
+ * Assim a segunda tentativa so age quando a primeira nao aconteceu.
+ */
+async function jaPublicouRecentemente(igUser, token, horas) {
+  try {
+    const r = await fetch(
+      `${GRAPH}/${igUser}/media?fields=id,timestamp,media_type&limit=10&access_token=${encodeURIComponent(token)}`
+    );
+    const dados = (await r.json()).data || [];
+    const ultimo = dados.find((m) => m.media_type === 'CAROUSEL_ALBUM');
+    if (!ultimo) return null;
+    const horasAtras = (Date.now() - new Date(ultimo.timestamp).getTime()) / 3600000;
+    return horasAtras < horas ? { horasAtras, quando: ultimo.timestamp } : null;
+  } catch (e) {
+    // Se a consulta falhar, seguimos em frente: e melhor arriscar um post a
+    // mais do que deixar de publicar por causa de uma checagem opcional.
+    console.log(`  aviso: nao consegui checar o ultimo carrossel (${e.message})`);
+    return null;
+  }
+}
+
 // ------------------------------------------------------------- conferencia
 const hash = (b) => crypto.createHash('sha256').update(b).digest('hex').slice(0, 16);
 
@@ -254,6 +283,21 @@ function conferir(pasta, meta, raiz) {
 
   console.log(`\n${slug} — ${imagens.length} slides`);
   await mostrarCota(igUser, token);
+
+  // Guarda contra publicacao dupla quando ha mais de uma tentativa agendada.
+  const idx = process.argv.indexOf('--pular-se-publicou-em');
+  if (idx !== -1 && !dryRun) {
+    const janela = Number(process.argv[idx + 1]);
+    const recente = await jaPublicouRecentemente(igUser, token, janela);
+    if (recente) {
+      console.log(
+        `\n  já saiu um carrossel há ${recente.horasAtras.toFixed(1)}h (${recente.quando}).` +
+          `\n  Janela de ${janela}h ainda aberta, então esta execução não publica nada.`
+      );
+      process.exit(78); // codigo neutro: nao e erro, e "nada a fazer"
+    }
+    console.log(`  nenhum carrossel nas últimas ${janela}h, pode publicar`);
+  }
 
   console.log('\n1) hospedando imagens');
   const urls = [];
