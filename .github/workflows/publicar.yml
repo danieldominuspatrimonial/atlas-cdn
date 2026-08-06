@@ -45,20 +45,28 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Instalar dependências
+      # A instalação é dividida em etapas separadas de propósito: quando algo
+      # falha, o nome da etapa que ficou vermelha já diz qual é a causa.
+
+      - name: Instalar pacotes node
+        run: npm install --no-audit --no-fund
+
+      - name: Instalar fonte de emoji
         run: |
-          npm ci || npm install
-          # Fonte de emoji: sem ela o Chromium headless desenha quadrado vazio.
-          # O apt-get update é obrigatório, senão o pacote não é encontrado.
           sudo apt-get update -qq
           sudo apt-get install -y -qq fonts-noto-color-emoji
-          npx playwright install --with-deps chromium
-          pip install requests
+
+      - name: Instalar o Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Instalar pacotes python
+        run: pip install requests
 
       - name: Conferir o ambiente
         run: |
           node -e "require('playwright'); require('sharp'); console.log('playwright e sharp ok')"
           python3 -c "import requests; print('requests ok')"
+          node -e "console.log('versao do playwright:', require('playwright/package.json').version)"
 
       - name: Escolher o carrossel da fila
         id: fila

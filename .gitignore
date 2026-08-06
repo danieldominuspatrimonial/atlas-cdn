@@ -1,6 +1,7 @@
 node_modules/
 .env
 out/
+package-lock.json
 # fotos brutas: ficam so no seu Mac, nunca no repositorio
 render/assets/originais/
 tmp-contato/
