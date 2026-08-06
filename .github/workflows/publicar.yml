@@ -124,4 +124,21 @@ jobs:
           cp "out/${{ steps.fila.outputs.slug }}/published.json" "publicados/$(date +%Y-%m-%d)-${{ steps.fila.outputs.slug }}.published.json" || true
           git add -A publicados content
           git commit -m "publicado: ${{ steps.fila.outputs.slug }}" || exit 0
-          git push origin HEAD:${{ github.ref_name }}
+
+          # O proprio publish.js commitou as imagens no branch durante esta mesma
+          # execucao, entao o checkout local ficou para tras. Sem trazer esses
+          # commits antes, o push e recusado por nao ser fast-forward e o job
+          # falha DEPOIS de o post ja ter ido ao ar.
+          for tentativa in 1 2 3; do
+            git fetch origin ${{ github.ref_name }}
+            git rebase origin/${{ github.ref_name }} || { git rebase --abort || true; }
+            if git push origin HEAD:${{ github.ref_name }}; then
+              echo "arquivado com sucesso"
+              exit 0
+            fi
+            echo "push recusado, tentativa $tentativa"
+            sleep 5
+          done
+          echo "AVISO: o post foi publicado, mas nao consegui arquivar o JSON da fila."
+          echo "Mova content/ para publicados/ a mao para o proximo carrossel entrar."
+          exit 1

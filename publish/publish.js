@@ -72,10 +72,16 @@ async function subirParaGitHub(arquivoLocal, caminhoRemoto) {
     morre(`upload para o GitHub falhou (${r.status}): ${(await r.text()).slice(0, 400)}`);
   }
 
-  // URL fixada no SHA do commit, não no nome do branch: o cache do jsDelivr por
-  // branch pode devolver 404 justamente quando a Meta vai buscar a imagem.
+  // URL fixada no SHA do commit, servida pelo raw do proprio GitHub.
+  //
+  // O jsDelivr seria mais rapido, mas ele so busca o arquivo no GitHub na
+  // primeira vez que alguem pede, e a Meta pede a imagem segundos depois do
+  // commit. Nessa janela o CDN pode responder 404 e a publicacao inteira falha
+  // por um motivo que nao tem nada a ver com o conteudo. O raw serve o arquivo
+  // no instante em que o commit existe, com o content-type certo, e a Meta so
+  // baixa cada imagem uma vez por dia.
   const commitSha = (await r.json()).commit?.sha || branch;
-  return `https://cdn.jsdelivr.net/gh/${repo}@${commitSha}/${caminhoRemoto}`;
+  return `https://raw.githubusercontent.com/${repo}/${commitSha}/${caminhoRemoto}`;
 }
 
 // -------------------------------------------------------------- graph api
