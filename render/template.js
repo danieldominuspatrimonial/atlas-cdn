@@ -114,7 +114,10 @@ body{background:${C.bg};font-family:'Nunito',system-ui,sans-serif;-webkit-font-s
 .main{flex:1 1 auto;display:flex;flex-direction:column;justify-content:flex-start;padding-top:129px}
 /* No 4:5 todo o bloco fica opticamente centrado, com ou sem foto, para que a
    posicao do texto nao mude de um slide para o outro. */
-.main--center{justify-content:center;padding-top:0;padding-bottom:6%}
+/* RESPIRO MINIMO entre o cabecalho (nome e @) e o texto: 100px, sempre.
+   Como o bloco e centralizado dentro do que sobra depois desse padding, a
+   distancia nunca fica menor que isso, tenha foto ou nao. */
+.main--center{justify-content:center;padding-top:100px;padding-bottom:4%}
 .txt{color:${C.text};font-weight:400;letter-spacing:-.2px}
 .txt p+p{margin-top:.85em}
 .txt b{font-weight:800}
@@ -126,8 +129,10 @@ body{background:${C.bg};font-family:'Nunito',system-ui,sans-serif;-webkit-font-s
 .list li{padding-left:0}
 .stat__v{font-size:150px;font-weight:800;color:${C.text};letter-spacing:-6px;line-height:.95}
 .stat__l{margin-top:24px;font-size:${H > 1080 ? 48 : 44}px;line-height:1.22;color:${C.text}}
-.shot{margin-top:122px;width:100%;border-radius:26px;overflow:hidden;background:#eee;flex:0 0 auto}
-.shot img{width:100%;display:block;object-fit:cover;max-height:${H === 1350 ? 620 : 400}px}
+.shot{margin-top:92px;width:100%;border-radius:26px;overflow:hidden;background:#eee;flex:0 0 auto}
+/* A foto e a primeira a ceder espaco: altura limitada para que o respiro do
+   cabecalho e a margem inferior nunca sejam comprimidos. */
+.shot img{width:100%;display:block;object-fit:cover;max-height:${H === 1350 ? 470 : 360}px}
 .eng{margin-top:64px;display:flex;justify-content:space-between;align-items:center;
   padding-top:34px;border-top:2px solid ${C.hairline};flex:0 0 auto}
 .eng__i{display:flex;align-items:center;gap:12px;color:${C.muted};font-size:28px}

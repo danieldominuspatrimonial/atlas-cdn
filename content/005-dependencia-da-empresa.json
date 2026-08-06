@@ -12,7 +12,8 @@
   "slides": [
     {
       "type": "tweet",
-      "text": "Você realmente quer depender do trabalho ativo da sua empresa para sempre?"
+      "text": "Você realmente quer depender do trabalho ativo da sua empresa para sempre?",
+      "image": "render/assets/banco-tijolo.jpg"
     },
     {
       "type": "tweet",

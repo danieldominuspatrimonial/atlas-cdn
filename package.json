@@ -1,7 +1,10 @@
 {
+  "name": "atlas-carrossel",
+  "private": true,
+  "description": "Agente de carrosseis Atlas Co.",
   "dependencies": {
-    "@fontsource/inter": "^5.3.0",
     "@fontsource/nunito": "^5.3.0",
+    "playwright": "1.56.0",
     "sharp": "^0.35.3"
   }
 }

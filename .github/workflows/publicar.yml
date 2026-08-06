@@ -48,9 +48,17 @@ jobs:
       - name: Instalar dependências
         run: |
           npm ci || npm install
+          # Fonte de emoji: sem ela o Chromium headless desenha quadrado vazio.
+          # O apt-get update é obrigatório, senão o pacote não é encontrado.
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-color-emoji
           npx playwright install --with-deps chromium
           pip install requests
-          sudo apt-get install -y fonts-noto-color-emoji
+
+      - name: Conferir o ambiente
+        run: |
+          node -e "require('playwright'); require('sharp'); console.log('playwright e sharp ok')"
+          python3 -c "import requests; print('requests ok')"
 
       - name: Escolher o carrossel da fila
         id: fila
@@ -58,7 +66,10 @@ jobs:
           if [ -n "${{ inputs.arquivo }}" ]; then
             ALVO="content/${{ inputs.arquivo }}.json"
           else
-            ALVO=$(ls -1 content/*.json 2>/dev/null | head -1)
+            # A fila é ordenada pelo prefixo numérico do nome (001-, 002-, ...).
+            # Sem o prefixo a ordem vira alfabética e você perde o controle de
+            # qual carrossel sai primeiro. Sempre nomeie com o prefixo.
+            ALVO=$(ls -1 content/*.json 2>/dev/null | sort | head -1)
           fi
           if [ -z "$ALVO" ] || [ ! -f "$ALVO" ]; then
             echo "Fila vazia. Nada a publicar."
