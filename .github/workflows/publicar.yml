@@ -1,19 +1,22 @@
 name: Publicar carrossel
 
-# Renderiza e publica no Instagram. Roda no GitHub Actions porque é o único
-# ambiente gratuito do stack com acesso de rede à Graph API da Meta.
+# Roda dentro da imagem oficial do Playwright, que já vem com o Chromium e todas
+# as bibliotecas de sistema instaladas. Isso elimina de uma vez as etapas que
+# estavam quebrando: instalar o Chromium, instalar dependências de sistema e
+# instalar a fonte de emoji. A imagem também já traz o Node.
+#
+# O publish foi reescrito de Python para Node pelo mesmo motivo: um runtime só,
+# sem pip, sem apt, sem nada para instalar além dos pacotes npm do projeto.
 #
 # Segredos necessários (Settings > Secrets and variables > Actions):
 #   IG_USER_ID        17841474007579365
-#   IG_ACCESS_TOKEN   token de longa duração
-#   META_APP_ID       1456440823172698
-#   META_APP_SECRET   chave secreta do app
+#   IG_ACCESS_TOKEN   token do Usuário do Sistema
 
 on:
   workflow_dispatch:
     inputs:
       arquivo:
-        description: 'Arquivo em content/ (sem .json). Vazio = o mais recente da fila.'
+        description: 'Arquivo em content/ (sem .json). Vazio = o primeiro da fila.'
         required: false
         default: ''
       dry_run:
@@ -31,42 +34,32 @@ concurrency:
 jobs:
   publicar:
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.56.0-noble
     permissions:
       contents: write
+
+    env:
+      # O Chromium já está na imagem. Sem isso o npm baixaria tudo de novo.
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+      PLAYWRIGHT_BROWSERS_PATH: /ms-playwright
 
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      # A instalação é dividida em etapas separadas de propósito: quando algo
-      # falha, o nome da etapa que ficou vermelha já diz qual é a causa.
+      - name: Diagnóstico do ambiente
+        run: |
+          echo "node:     $(node -v)"
+          echo "npm:      $(npm -v)"
+          echo "chromium: $(ls /ms-playwright | tr '\n' ' ')"
 
       - name: Instalar pacotes node
         run: npm install --no-audit --no-fund
 
-      - name: Instalar fonte de emoji
+      - name: Conferir que tudo carrega
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq fonts-noto-color-emoji
-
-      - name: Instalar o Chromium
-        run: npx playwright install --with-deps chromium
-
-      - name: Instalar pacotes python
-        run: pip install requests
-
-      - name: Conferir o ambiente
-        run: |
-          node -e "require('playwright'); require('sharp'); console.log('playwright e sharp ok')"
-          python3 -c "import requests; print('requests ok')"
-          node -e "console.log('versao do playwright:', require('playwright/package.json').version)"
+          node -e "require('playwright'); require('sharp'); console.log('playwright e sharp carregaram')"
+          node -e "console.log('playwright', require('playwright/package.json').version)"
 
       - name: Escolher o carrossel da fila
         id: fila
@@ -75,8 +68,6 @@ jobs:
             ALVO="content/${{ inputs.arquivo }}.json"
           else
             # A fila é ordenada pelo prefixo numérico do nome (001-, 002-, ...).
-            # Sem o prefixo a ordem vira alfabética e você perde o controle de
-            # qual carrossel sai primeiro. Sempre nomeie com o prefixo.
             ALVO=$(ls -1 content/*.json 2>/dev/null | sort | head -1)
           fi
           if [ -z "$ALVO" ] || [ ! -f "$ALVO" ]; then
@@ -84,12 +75,22 @@ jobs:
             echo "vazio=true" >> $GITHUB_OUTPUT
             exit 0
           fi
+          echo "escolhido: $ALVO"
           echo "alvo=$ALVO" >> $GITHUB_OUTPUT
           echo "slug=$(basename $ALVO .json)" >> $GITHUB_OUTPUT
 
       - name: Validar e renderizar
         if: steps.fila.outputs.vazio != 'true'
         run: node render/render.js "${{ steps.fila.outputs.alvo }}"
+
+      - name: Guardar os slides para inspeção
+        if: always() && steps.fila.outputs.vazio != 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: slides-${{ steps.fila.outputs.slug }}
+          path: out/
+          if-no-files-found: ignore
+          retention-days: 14
 
       - name: Publicar
         if: steps.fila.outputs.vazio != 'true'
@@ -101,20 +102,20 @@ jobs:
           GH_BRANCH: ${{ github.ref_name }}
         run: |
           if [ "${{ inputs.dry_run }}" = "true" ]; then
-            python3 publish/publish.py "out/${{ steps.fila.outputs.slug }}" --dry-run
+            node publish/publish.js "out/${{ steps.fila.outputs.slug }}" --dry-run
           else
-            python3 publish/publish.py "out/${{ steps.fila.outputs.slug }}"
+            node publish/publish.js "out/${{ steps.fila.outputs.slug }}"
           fi
 
       - name: Arquivar o carrossel publicado
         if: steps.fila.outputs.vazio != 'true' && inputs.dry_run != true
         run: |
           mkdir -p publicados
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git config user.name  'atlas-agente'
           git config user.email 'atlas-agente@users.noreply.github.com'
-          git pull --rebase --autostash origin ${{ github.ref_name }} || true
           git mv "${{ steps.fila.outputs.alvo }}" "publicados/$(date +%Y-%m-%d)-${{ steps.fila.outputs.slug }}.json"
           cp "out/${{ steps.fila.outputs.slug }}/published.json" "publicados/$(date +%Y-%m-%d)-${{ steps.fila.outputs.slug }}.published.json" || true
-          git add -A publicados
+          git add -A publicados content
           git commit -m "publicado: ${{ steps.fila.outputs.slug }}" || exit 0
-          git push origin ${{ github.ref_name }}
+          git push origin HEAD:${{ github.ref_name }}

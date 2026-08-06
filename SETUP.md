@@ -115,9 +115,8 @@ Para publicar fora de hora: aba **Actions → Publicar carrossel → Run workflo
 
 ```bash
 npm install
-pip install requests
 node render/render.js content/<arquivo>.json     # valida e gera os JPEGs 1440x1800
-python3 publish/publish.py out/<slug> --dry-run  # exige rede liberada para a Meta
+node publish/publish.js out/<slug> --dry-run     # exige rede liberada para a Meta
 ```
 
 O `.env.example` mostra as variáveis. Nunca comite o `.env`.
@@ -138,8 +137,7 @@ atlas-carrossel/
 │   ├── render.js                   ← valida e exporta JPEG 1080x1350
 │   └── assets/avatar.jpg
 ├── publish/
-│   ├── publish.py                  ← hospeda no jsDelivr + publica via Graph API
-│   └── refresh_token.py
+│   └── publish.js                  ← hospeda no jsDelivr + publica via Graph API
 └── .github/workflows/
     ├── publicar.yml                ← diário 19h30 + manual
     └── renovar-token.yml           ← segunda 6h
