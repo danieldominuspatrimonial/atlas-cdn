@@ -47,24 +47,20 @@ jobs:
     # Sem teto, um fetch travado segura o job ate o limite de 6h do GitHub e
     # bloqueia os horarios seguintes por causa do grupo de concorrencia.
     timeout-minutes: 20
-    container:
-      image: mcr.microsoft.com/playwright:v1.56.0-noble
     permissions:
       contents: write
-
-    env:
-      # O Chromium já está na imagem. Sem isso o npm baixaria tudo de novo.
-      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
-      PLAYWRIGHT_BROWSERS_PATH: /ms-playwright
 
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
       - name: Diagnóstico do ambiente
         run: |
-          echo "node:     $(node -v)"
-          echo "npm:      $(npm -v)"
-          echo "chromium: $(ls /ms-playwright | tr '\n' ' ')"
+          echo "node: $(node -v)"
+          echo "npm:  $(npm -v)"
 
       - name: Instalar pacotes node
         # npm ci usa o lockfile: a versao instalada e sempre a mesma que foi
@@ -72,6 +68,22 @@ jobs:
         # uma reorganizacao do pacote da fonte, derrubaria as publicacoes do dia
         # sem ninguem ter mexido em nada.
         run: npm ci --no-audit --no-fund
+
+      - name: Instalar a fonte de emoji
+        # Sem ela o Chromium headless desenha quadrado vazio no lugar do emoji.
+        # O apt-get update e obrigatorio, senao o pacote nao e encontrado.
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-color-emoji
+
+      - name: Instalar o Chromium
+        # Voltamos a instalar o navegador no runner em vez de usar a imagem
+        # oficial do Playwright. O container fazia o job ficar preso em "queued"
+        # sem nunca receber maquina: das execucoes 9 a 11, nenhuma iniciou,
+        # enquanto todas as 8 anteriores, sem container, iniciaram normalmente.
+        # A falha original que motivou o container era outra, e ja foi corrigida:
+        # faltava o playwright no package.json.
+        run: npx playwright install --with-deps chromium
 
       - name: Conferir que tudo carrega
         run: |
