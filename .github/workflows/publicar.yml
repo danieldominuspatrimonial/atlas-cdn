@@ -24,8 +24,10 @@ on:
         type: boolean
         default: false
   schedule:
-    # 19h30 no horário de Brasília = 22h30 UTC
-    - cron: '30 22 * * *'
+    # Horários de Brasília (UTC-3), convertidos para UTC.
+    # O de 21h cruza a meia-noite em UTC, por isso vira 00:00 do dia seguinte.
+    - cron: '0 15 * * *'   # 12h
+    - cron: '0 0 * * *'    # 21h
 
 concurrency:
   group: publicar
@@ -84,6 +86,15 @@ jobs:
           echo "slug: $SLUG"
           echo "alvo=$ALVO" >> $GITHUB_OUTPUT
           echo "slug=$SLUG" >> $GITHUB_OUTPUT
+
+      - name: Avisar se a fila estiver acabando
+        if: steps.fila.outputs.vazio != 'true'
+        run: |
+          RESTANTES=$(ls -1 content/*.json 2>/dev/null | wc -l)
+          echo "carrosséis na fila: $RESTANTES" >> $GITHUB_STEP_SUMMARY
+          if [ "$RESTANTES" -le 4 ]; then
+            echo ":warning: **A fila tem só $RESTANTES carrosséis.** Com 2 publicações por dia, isso é menos de 2 dias." >> $GITHUB_STEP_SUMMARY
+          fi
 
       - name: Validar e renderizar
         if: steps.fila.outputs.vazio != 'true'

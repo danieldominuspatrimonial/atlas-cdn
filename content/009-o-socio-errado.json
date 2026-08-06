@@ -1,0 +1,43 @@
+{
+  "slug": "o-socio-errado",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Registro: estrutura. Sem numero especifico a conferir.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "A maioria das sociedades no Brasil termina mal"
+    },
+    {
+      "type": "tweet",
+      "text": "Não porque as pessoas são ruins\n\nMas porque ninguém combinou nada antes de precisar"
+    },
+    {
+      "type": "tweet",
+      "text": "Quem entra com o dinheiro e quem entra com o trabalho valem o mesmo?\nQuem decide quando há empate?\nComo alguém sai se quiser sair?"
+    },
+    {
+      "type": "tweet",
+      "text": "Se você não sabe responder essas três, você não tem sociedade\n\nVocê tem um acordo verbal com valor de milhões"
+    },
+    {
+      "type": "tweet",
+      "text": "Ninguém discute isso quando está tudo bem\n\nE quando não está mais, já é tarde para discutir",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Você não tem sociedade. Tem um acordo verbal com valor de milhões.\n\nO que está escrito hoje sobre como um sócio sai da sua empresa?"
+}

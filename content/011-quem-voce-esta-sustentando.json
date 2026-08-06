@@ -1,0 +1,44 @@
+{
+  "slug": "quem-voce-esta-sustentando",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Registro: dor ampla. Sem numero especifico a conferir.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Você sustenta a sua família, os seus funcionários e as famílias deles"
+    },
+    {
+      "type": "tweet",
+      "text": "Sustenta fornecedor, contador, aluguel e três níveis de tributo",
+      "image": "render/assets/terno-azul.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "E ainda te chamam de patrão como se fosse ofensa"
+    },
+    {
+      "type": "tweet",
+      "text": "Quem nunca assinou uma folha de pagamento não faz ideia do que é dormir devendo salário"
+    },
+    {
+      "type": "tweet",
+      "text": "Você não precisa de aplauso\n\nMas também não precisa aceitar que te tratem como problema",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Quem nunca assinou uma folha de pagamento não faz ideia do que é dormir devendo salário.\n\nQuantas famílias dependem do seu mês fechar?"
+}

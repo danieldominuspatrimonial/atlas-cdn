@@ -1,0 +1,44 @@
+{
+  "slug": "trabalhar-duro-nao-basta",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Registro: dor ampla. Sem numero especifico a conferir.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Tem gente que trabalha catorze horas por dia a vida inteira e morre devendo"
+    },
+    {
+      "type": "tweet",
+      "text": "E tem gente que trabalha oito e constrói patrimônio"
+    },
+    {
+      "type": "tweet",
+      "text": "A diferença não é esforço\n\nÉ o que cada um faz com o que sobra",
+      "image": "render/assets/mesa-serio.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Esforço sem direção só produz cansaço\n\nE cansaço não vira patrimônio, vira conta de médico"
+    },
+    {
+      "type": "tweet",
+      "text": "Trabalhar duro é obrigação\n\nSaber para onde vai o resultado desse trabalho é o que separa os dois",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Tem gente que trabalha catorze horas por dia e morre devendo. A diferença não é esforço.\n\nPara onde vai o que sobra do seu mês?"
+}

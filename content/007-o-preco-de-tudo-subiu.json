@@ -1,0 +1,43 @@
+{
+  "slug": "o-preco-de-tudo-subiu",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Registro: dor ampla. Sem numero especifico a conferir.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "O aluguel subiu\nO mercado subiu\nA escola dos seus filhos subiu\n\nO seu faturamento também subiu"
+    },
+    {
+      "type": "tweet",
+      "text": "E mesmo assim sobra menos no fim do mês do que sobrava há três anos"
+    },
+    {
+      "type": "tweet",
+      "text": "Você não está gastando mais\n\nO que você guarda está valendo menos"
+    },
+    {
+      "type": "tweet",
+      "text": "Dinheiro parado na conta não é segurança\n\nÉ perda lenta, que ninguém te avisa que está acontecendo"
+    },
+    {
+      "type": "tweet",
+      "text": "O trabalho que você já fez continua rendendo?\n\nOu ele só existiu no mês em que você o fez?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Você não está gastando mais. O que você guarda está valendo menos.\n\nQuanto do que você produziu nos últimos três anos ainda existe hoje?"
+}

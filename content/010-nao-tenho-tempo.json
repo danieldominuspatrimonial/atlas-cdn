@@ -1,0 +1,44 @@
+{
+  "slug": "nao-tenho-tempo",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Registro: dor ampla. Sem numero especifico a conferir.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Você não tem tempo para olhar o próprio dinheiro"
+    },
+    {
+      "type": "tweet",
+      "text": "Mas tem tempo para resolver o problema do cliente, do fornecedor, do funcionário e do concorrente"
+    },
+    {
+      "type": "tweet",
+      "text": "Não é falta de tempo\n\nÉ ordem de prioridade"
+    },
+    {
+      "type": "tweet",
+      "text": "O que gera caixa hoje sempre vai parecer mais urgente do que o que gera patrimônio em dez anos",
+      "image": "render/assets/explicando.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "E é exatamente por isso que dez anos passam e o patrimônio continua igual",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Não é falta de tempo. É ordem de prioridade.\n\nQuantas horas do seu mês foram para cuidar do que é seu, e não do que é da empresa?"
+}

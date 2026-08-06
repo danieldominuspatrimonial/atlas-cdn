@@ -1,0 +1,44 @@
+{
+  "slug": "o-que-ninguem-te-ensinou",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Registro: dor ampla. Sem numero especifico a conferir.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Você passou dezesseis anos na escola\n\nNenhuma aula sobre tributo, sobre sociedade, sobre para onde vai o dinheiro que você produz"
+    },
+    {
+      "type": "tweet",
+      "text": "Isso não foi descuido",
+      "image": "render/assets/escuta.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Quem entende como o dinheiro funciona é minoria\n\nE minoria não muda regra"
+    },
+    {
+      "type": "tweet",
+      "text": "Você aprendeu a ser bom funcionário\nA pedir aumento\nA esperar promoção\n\nE a achar que quem tem empresa teve sorte"
+    },
+    {
+      "type": "tweet",
+      "text": "Reclamar da escola não muda nada\n\nParar de esperar que alguém te ensine o que você já podia estar estudando hoje, muda",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Você passou dezesseis anos na escola e nenhuma aula falou sobre dinheiro. Isso não foi descuido.\n\nO que você aprendeu sobre dinheiro veio de onde?"
+}

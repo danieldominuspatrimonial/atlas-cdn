@@ -1,9 +1,14 @@
 {
   "_comentario": "Configuração do agente de carrosséis Atlas Co. Editar aqui muda o comportamento do agente.",
   "volume": {
-    "carrosseis_por_dia": 1,
+    "carrosseis_por_dia": 2,
     "horarios_de_publicacao": [
-      "19:30"
+      "12:00",
+      "21:00"
+    ],
+    "cron_utc": [
+      "0 15 * * *",
+      "0 0 * * *"
     ],
     "dias_ativos": [
       "seg",
@@ -14,7 +19,8 @@
       "sab",
       "dom"
     ],
-    "_nota_volume": "Conta de 2.4k seguidores: estudo Metricool aponta pico de performance entre 7 e 14 posts/semana nessa faixa. Como já existem ~2 Reels/dia, 1 carrossel/dia entra sem canibalizar. Subir para 2 só depois de 3 semanas de dado."
+    "_nota_volume": "Decisao do Daniel em 05/ago/2026: 2 por dia para acelerar o aprendizado. 14 pontos de dado por semana em vez de 7. Buffer (2,1M posts) nao encontra canibalizacao de alcance por volume nessa faixa de seguidores, e o gargalo do aprendizado e quantidade de amostra, nao frequencia.",
+    "_consumo_da_fila": "2 por dia. A fila precisa de 14 carrosseis para cobrir uma semana."
   },
   "aprovacao": {
     "modo": "aprovar_antes",
