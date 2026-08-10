@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// LEIA CONTEXTO.md na raiz do repositorio antes de mexer neste arquivo.
 /**
  * Atlas Co. — publicação de carrossel no Instagram via Meta Graph API.
  *

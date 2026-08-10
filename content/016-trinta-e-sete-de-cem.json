@@ -1,0 +1,47 @@
+{
+  "slug": "trinta-e-sete-de-cem",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Dor ampla. Hook NUMERICO. Numero conferido: das empresas empregadoras nascidas em 2017, 37,3% seguiam ativas em 2022, ou seja 62,7% encerraram (IBGE, Demografia das Empresas 2022, divulgado em 05/12/2024).",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "De cada 100 empresas abertas no Brasil, 37 continuam de porta aberta cinco anos depois"
+    },
+    {
+      "type": "tweet",
+      "text": "As outras 63 fecharam\n\nDado do IBGE, empresas nascidas em 2017 e medidas em 2022"
+    },
+    {
+      "type": "tweet",
+      "text": "Cada porta dessas era o sustento de uma família e de todas as famílias que trabalhavam ali"
+    },
+    {
+      "type": "tweet",
+      "text": "E ainda existe quem chame empreender de privilégio"
+    },
+    {
+      "type": "tweet",
+      "text": "Ninguém fecha a empresa por falta de vontade\n\nFecha quando a conta não fecha por tempo demais"
+    },
+    {
+      "type": "tweet",
+      "text": "Sorte não explica cinco anos de porta aberta",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Só 37 de cada 100 empresas brasileiras chegam aos cinco anos, segundo o IBGE. As outras 63 fecharam.\n\nQuantos anos a sua já tem de porta aberta?"
+}

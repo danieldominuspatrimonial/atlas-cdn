@@ -1,0 +1,43 @@
+{
+  "slug": "a-empresa-espera",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Dor ampla. Hook CONCEITUAL. Sem numero a conferir. Sem foto.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Sua empresa espera\n\nSeu filho de sete anos não espera"
+    },
+    {
+      "type": "tweet",
+      "text": "Reunião remarcada volta na semana seguinte\n\nAniversário perdido não volta"
+    },
+    {
+      "type": "tweet",
+      "text": "Você trabalha para dar a eles o que não teve e acaba entregando menos do que eles mais queriam, que é você por perto"
+    },
+    {
+      "type": "tweet",
+      "text": "Ninguém no fim da vida lembra do faturamento de um mês específico"
+    },
+    {
+      "type": "tweet",
+      "text": "Dinheiro se recupera\n\nA infância dos seus filhos acontece uma vez",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Reunião remarcada volta na semana seguinte. Aniversário perdido não volta.\n\nQuantos jantares em casa você teve nos últimos trinta dias?"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "itcmd-e-inventario",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Estrutura patrimonial. Hook NUMERICO. Numeros conferidos: teto de 8% do ITCMD, Resolucao do Senado 9/1992; EC 132/2023 tornou a progressividade obrigatoria e a LC 227/2026 obrigou os estados a criar faixas por valor (Machado Meyer). Duracao do inventario tratada como faixa aproximada, sem atribuicao de fonte, porque o dado do CNJ so aparece em fonte secundaria.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "O ITCMD pode chegar a 8% de tudo que for transmitido para os seus herdeiros"
+    },
+    {
+      "type": "tweet",
+      "text": "A Emenda Constitucional 132 tornou a progressividade obrigatória e a Lei Complementar 227 de 2026 mandou os estados criarem faixas por valor"
+    },
+    {
+      "type": "tweet",
+      "text": "Quem tem mais passa a pagar alíquota maior, e não mais a mesma do vizinho"
+    },
+    {
+      "type": "tweet",
+      "text": "Um inventário costuma levar de um a dois anos\n\nNesse período o imóvel não se vende e a empresa fica travada"
+    },
+    {
+      "type": "tweet",
+      "text": "A família descobre o custo da transmissão no pior momento possível"
+    },
+    {
+      "type": "tweet",
+      "text": "Sucessão não é assunto de idade\n\nÉ assunto de quem depende de você",
+      "image": "render/assets/casal-campo.jpg",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "O ITCMD chega a 8% e a progressividade virou obrigatória com a Emenda 132. O inventário ainda trava imóvel e empresa por um a dois anos.\n\nSua família saberia o que fazer amanhã?"
+}

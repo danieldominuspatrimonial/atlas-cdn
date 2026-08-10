@@ -1,0 +1,48 @@
+{
+  "slug": "dividendos-e-a-conta-nova",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Dor ampla, angulo carga tributaria. Hook NUMERICO. Trocado porque o tema '150 dias' ja foi publicado em 05/ago. Numeros conferidos: Lei 15.270/2025 criou retencao de 10% na fonte sobre lucros e dividendos pagos por uma mesma PJ a uma mesma PF acima de R$ 50 mil no mesmo mes, a partir de 01/01/2026 (Planalto, art. 6o-A da Lei 9.250/1995); imposto minimo do IRPFM alcanca renda anual acima de R$ 600 mil. Descreve mudanca de regra, sem orientar operacao.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "A partir de janeiro de 2026, o lucro que a sua empresa distribui acima de R$ 50 mil por mês passa a ter 10% retidos na fonte"
+    },
+    {
+      "type": "tweet",
+      "text": "É a Lei 15.270, aprovada em dezembro de 2025\n\nO que era isento deixou de ser"
+    },
+    {
+      "type": "tweet",
+      "text": "E existe ainda o imposto mínimo, que alcança quem tem renda anual acima de R$ 600 mil"
+    },
+    {
+      "type": "tweet",
+      "text": "Nenhum serviço público melhorou por causa disso\n\nSó a conta mudou de tamanho",
+      "image": "render/assets/mesa-serio.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Todo ano aparece regra nova sobre um dinheiro que já foi tributado antes de chegar até você"
+    },
+    {
+      "type": "tweet",
+      "text": "Quem produz não é consultado\n\nÉ informado",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "A Lei 15.270 passou a reter 10% na fonte sobre lucro distribuído acima de R$ 50 mil por mês, a partir de 2026.\n\nSeu contador já te mostrou o efeito disso na sua retirada?"
+}

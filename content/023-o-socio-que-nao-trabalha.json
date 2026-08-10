@@ -1,0 +1,48 @@
+{
+  "slug": "o-socio-que-nao-trabalha",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Dor ampla. Hook CONCEITUAL. Sem numero a conferir.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Você tem um sócio que nunca trabalhou um dia na sua empresa e leva parte de tudo que entra"
+    },
+    {
+      "type": "tweet",
+      "text": "Ele não assina folha, não atende cliente, não responde processo, não perde noite de sono"
+    },
+    {
+      "type": "tweet",
+      "text": "Mas se você atrasar a parte dele, ele bloqueia a sua conta"
+    },
+    {
+      "type": "tweet",
+      "text": "E se a empresa quebrar, o prejuízo fica todo com você"
+    },
+    {
+      "type": "tweet",
+      "text": "Sociedade de verdade divide risco\n\nEssa aqui divide só resultado",
+      "image": "render/assets/mesa-serio.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Ninguém está pedindo isenção\n\nEstá pedindo proporção",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Sociedade de verdade divide risco. A que você tem com o Estado divide apenas resultado.\n\nQuanto do seu faturamento saiu em tributo no mês passado?"
+}

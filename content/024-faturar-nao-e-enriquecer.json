@@ -1,0 +1,47 @@
+{
+  "slug": "faturar-nao-e-enriquecer",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Dor ampla. Hook CONCEITUAL. Sem numero a conferir. Sem foto.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Trabalhar mais horas resolve o mês\n\nNão resolve os próximos vinte anos"
+    },
+    {
+      "type": "tweet",
+      "text": "Tem empresário faturando alto há uma década com o mesmo patrimônio de dez anos atrás"
+    },
+    {
+      "type": "tweet",
+      "text": "Tudo que entrou voltou para dentro da empresa ou subiu o padrão de vida da família"
+    },
+    {
+      "type": "tweet",
+      "text": "Faturamento não é riqueza\n\nRiqueza é o que sobrou depois que tudo foi pago"
+    },
+    {
+      "type": "tweet",
+      "text": "Quem só sabe produzir receita constrói para si mesmo um emprego caro"
+    },
+    {
+      "type": "tweet",
+      "text": "A empresa deveria sustentar você\n\nE não o contrário",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Faturamento alto e patrimônio parado há dez anos são a mesma história contada por muito empresário.\n\nQuanto sobrou do que você faturou nos últimos cinco anos?"
+}

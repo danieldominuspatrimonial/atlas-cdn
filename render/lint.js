@@ -1,4 +1,5 @@
 // Atlas Co. — validador de conteúdo.
+// LEIA CONTEXTO.md na raiz do repositorio antes de mexer neste arquivo.
 // Aplica as regras do PROMPT "Crença Escrita" (Daniel, ago/2026).
 // Decisão do Daniel em 05/ago/2026: PDF integral, sem exceção.
 //

@@ -1,12 +1,9 @@
 name: Publicar carrossel
 
-# Roda dentro da imagem oficial do Playwright, que já vem com o Chromium e todas
-# as bibliotecas de sistema instaladas. Isso elimina de uma vez as etapas que
-# estavam quebrando: instalar o Chromium, instalar dependências de sistema e
-# instalar a fonte de emoji. A imagem também já traz o Node.
+# LEIA CONTEXTO.md ANTES DE MEXER AQUI.
 #
-# O publish foi reescrito de Python para Node pelo mesmo motivo: um runtime só,
-# sem pip, sem apt, sem nada para instalar além dos pacotes npm do projeto.
+# Roda direto no runner do GitHub. Nao use `container:`: foi testado e o job
+# fica preso em "queued" sem nunca receber maquina.
 #
 # Segredos necessários (Settings > Secrets and variables > Actions):
 #   IG_USER_ID        17841474007579365

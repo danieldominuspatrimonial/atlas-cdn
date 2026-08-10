@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// LEIA CONTEXTO.md na raiz do repositorio antes de mexer neste arquivo.
 // Uso: node render/render.js content/<arquivo>.json
 // Saída: out/<slug>/01.jpg ... NN.jpg  (1440x1800, JPEG 4:4:4 — formato exigido pela Graph API)
 

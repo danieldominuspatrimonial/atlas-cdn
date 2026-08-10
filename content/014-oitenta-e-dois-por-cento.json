@@ -1,0 +1,48 @@
+{
+  "slug": "oitenta-e-dois-por-cento",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Dor ampla. Hook NUMERICO. Numeros conferidos: 82,0% das familias endividadas e 29,8% inadimplentes (Peic/CNC, julho/2026); 36% dos adultos investem e 107,7 milhoes fora (Anbima, Raio X 9a edicao, 23/04/2026).",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "82% das famílias brasileiras estão endividadas\n\nÉ o maior número já registrado"
+    },
+    {
+      "type": "tweet",
+      "text": "Quase 30% já não conseguem pagar o que devem"
+    },
+    {
+      "type": "tweet",
+      "text": "Não é falta de trabalho\n\nÉ renda que termina antes do mês"
+    },
+    {
+      "type": "tweet",
+      "text": "Do outro lado, só 36% dos adultos aplicam algum dinheiro\n\nOs outros 107 milhões apenas repassam adiante o que recebem"
+    },
+    {
+      "type": "tweet",
+      "text": "Ganhar mais resolve pouco quando tudo que entra já tem destino antes de entrar"
+    },
+    {
+      "type": "tweet",
+      "text": "A diferença entre quem acumula e quem não acumula raramente está no salário",
+      "image": "render/assets/escuta.jpg",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "82% das famílias endividadas e apenas 36% dos adultos aplicando algum dinheiro. Os dois números descrevem o mesmo país.\n\nSeu dinheiro tem destino definido antes de entrar?"
+}

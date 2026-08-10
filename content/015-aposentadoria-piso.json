@@ -1,0 +1,44 @@
+{
+  "slug": "aposentadoria-piso",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Dor ampla. Hook NUMERICO. Numeros conferidos: 62,5% dos aposentados e pensionistas recebem um salario minimo, 21,9 milhoes de pessoas; salario minimo 2026 R$ 1.621; teto do INSS 2026 R$ 8.475,55 (Portaria Interministerial MPS/MF 13, de 09/01/2026).",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "62,5% dos aposentados no Brasil recebem um salário mínimo\n\nSão 21,9 milhões de pessoas vivendo com R$ 1.621 por mês"
+    },
+    {
+      "type": "tweet",
+      "text": "O teto do INSS em 2026 é R$ 8.475,55\n\nE mesmo o teto exige uma vida inteira de contribuição"
+    },
+    {
+      "type": "tweet",
+      "text": "Quem passou trinta anos dentro de uma empresa descobre no fim que o sistema nunca foi desenhado para manter o padrão de ninguém"
+    },
+    {
+      "type": "tweet",
+      "text": "O empresário não tem nem esse piso\n\nSe ele parar, a renda para junto",
+      "image": "render/assets/banco-tijolo.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Aposentadoria no Brasil não é o que sustenta você depois\n\nÉ o valor mínimo que evita a miséria",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "62,5% dos aposentados recebem um salário mínimo, hoje R$ 1.621. O teto do INSS é R$ 8.475,55 e exige uma vida inteira de contribuição.\n\nSua renda para no dia em que você parar?"
+}

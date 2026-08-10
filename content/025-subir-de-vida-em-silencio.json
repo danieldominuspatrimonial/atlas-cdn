@@ -1,0 +1,48 @@
+{
+  "slug": "subir-de-vida-em-silencio",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Dor ampla. Hook CONCEITUAL. Sem numero a conferir.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "No Brasil você pode ser qualquer coisa, menos bem sucedido em silêncio"
+    },
+    {
+      "type": "tweet",
+      "text": "Se cresceu, foi sorte\n\nSe cresceu muito, foi coisa errada"
+    },
+    {
+      "type": "tweet",
+      "text": "Ninguém pergunta quantos anos você passou sem retirar nada da empresa"
+    },
+    {
+      "type": "tweet",
+      "text": "Perguntam do carro\n\nNunca perguntam da dívida que veio antes dele",
+      "image": "render/assets/palco-bw.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Quem nunca arriscou o próprio dinheiro acredita que resultado cai do céu"
+    },
+    {
+      "type": "tweet",
+      "text": "Você não deve explicação a quem nunca correu o mesmo risco",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Ninguém pergunta quantos anos você passou sem retirar nada da empresa. Perguntam do carro.\n\nQuantas vezes você já teve que se explicar por ter dado certo?"
+}

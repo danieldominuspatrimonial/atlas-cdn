@@ -1,0 +1,44 @@
+{
+  "slug": "quem-produz-sustenta",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Dor ampla. Hook CONCEITUAL. Sem numero a conferir.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Existe quem acorde às cinco para abrir a empresa\n\nE existe quem acorde às dez para explicar na internet por que o primeiro é o problema do país"
+    },
+    {
+      "type": "tweet",
+      "text": "Um assina a folha de pagamento\n\nO outro opina sobre ela"
+    },
+    {
+      "type": "tweet",
+      "text": "Quem gera emprego virou suspeito\n\nQuem só cobra virou autoridade moral"
+    },
+    {
+      "type": "tweet",
+      "text": "Você não pediu aplauso\n\nPediu que parassem de te tratar como se produzir fosse ofensa",
+      "image": "render/assets/explicando.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "No fim do mês a conta chega para quem produz\n\nSempre chegou",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Quem assina a folha de pagamento virou suspeito. Quem só opina sobre ela virou autoridade moral.\n\nQuantas famílias dependem do seu mês fechar?"
+}

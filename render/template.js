@@ -1,4 +1,5 @@
 // Atlas Co. — template de slide "print de tweet"
+// LEIA CONTEXTO.md na raiz do repositorio antes de mexer neste arquivo.
 // Geometria extraída pixel a pixel do Modelo_Carrossel.png enviado pelo Daniel:
 //   canvas 1080, margem 108 (10%), avatar 108px, corpo iniciando 129px abaixo do avatar,
 //   entrelinha 51px, bloco de imagem com 122px de respiro e cantos arredondados.

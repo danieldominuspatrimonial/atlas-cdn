@@ -1,0 +1,47 @@
+{
+  "slug": "trinta-de-trinta",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Dor ampla. Hook NUMERICO. Numeros conferidos: Brasil em 30o de 30 paises no IRBES, 15o ano seguido (IBPT, 15a edicao, junho/2026); carga 32,40% do PIB em 2025 (Tesouro Nacional).",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Entre os 30 países com maior carga tributária, o Brasil está em último lugar no retorno que devolve ao cidadão"
+    },
+    {
+      "type": "tweet",
+      "text": "Décimo quinto ano seguido na mesma posição\n\nNão é acidente de um ano ruim"
+    },
+    {
+      "type": "tweet",
+      "text": "A carga chegou a 32,4% do PIB em 2025, o maior valor já registrado"
+    },
+    {
+      "type": "tweet",
+      "text": "Você contribui como país rico e usa serviço de país pobre"
+    },
+    {
+      "type": "tweet",
+      "text": "Todo ano a conta sobe\n\nTodo ano a fila do hospital continua do mesmo tamanho"
+    },
+    {
+      "type": "tweet",
+      "text": "A discussão não é pagar menos\n\nÉ alguém prestar contas do que já foi pago",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "O Brasil é o último dos 30 países com maior carga tributária em retorno ao cidadão, pelo décimo quinto ano seguido.\n\nO que você recebeu de volta neste ano?"
+}

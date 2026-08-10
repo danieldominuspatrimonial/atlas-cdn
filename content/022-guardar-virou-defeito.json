@@ -1,0 +1,44 @@
+{
+  "slug": "guardar-virou-defeito",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Dor ampla. Hook CONCEITUAL. Numero conferido: 107,7 milhoes de adultos brasileiros fora dos produtos financeiros, contra 60,6 milhoes que investem (Anbima, Raio X do Investidor 9a edicao, dados de 2025, divulgado em 23/04/2026).",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "No Brasil, quem guarda dinheiro é chamado de sovina\n\nE quem gasta tudo é chamado de generoso"
+    },
+    {
+      "type": "tweet",
+      "text": "Quem investe é chamado de sortudo\n\nQuem perde tudo é chamado de vítima"
+    },
+    {
+      "type": "tweet",
+      "text": "São 107 milhões de adultos brasileiros que não aplicam um real em nada"
+    },
+    {
+      "type": "tweet",
+      "text": "O problema não é falta de informação\n\nÉ que guardar dinheiro virou motivo de piada na mesa do bar"
+    },
+    {
+      "type": "tweet",
+      "text": "Enquanto poupar for antipático, o país continua exatamente igual",
+      "image": "render/assets/plateia.jpg",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "107 milhões de adultos brasileiros não aplicam um real em nada. Guardar dinheiro virou motivo de piada.\n\nQuem na sua mesa te chamou de exagerado por poupar?"
+}

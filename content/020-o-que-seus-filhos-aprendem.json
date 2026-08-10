@@ -1,0 +1,48 @@
+{
+  "slug": "o-que-seus-filhos-aprendem",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Dor ampla com ponte para sucessao. Hook CONCEITUAL. Trocado porque o tema aparencia versus patrimonio ja foi publicado em 07/ago. Sem numero a conferir.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Seus filhos não aprendem sobre dinheiro na escola\n\nAprendem observando você"
+    },
+    {
+      "type": "tweet",
+      "text": "Eles veem se a conta do mês te tira o sono\n\nVeem se tudo que entra some antes do dia trinta"
+    },
+    {
+      "type": "tweet",
+      "text": "Veem se o pai fala do próprio trabalho como orgulho ou como condenação"
+    },
+    {
+      "type": "tweet",
+      "text": "Nenhuma aula ensina o que uma mesa de jantar ensina em dez anos",
+      "image": "render/assets/retrato-sorriso.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Patrimônio sem sucessor preparado dura uma geração e termina"
+    },
+    {
+      "type": "tweet",
+      "text": "Você pode deixar dinheiro para eles\n\nOu deixar dinheiro e a cabeça para administrar",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Seus filhos não aprendem sobre dinheiro na escola. Aprendem na mesa de jantar, observando você.\n\nO que a sua rotina deste ano ensinou a eles?"
+}

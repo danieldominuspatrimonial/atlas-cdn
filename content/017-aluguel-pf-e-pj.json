@@ -1,0 +1,48 @@
+{
+  "slug": "aluguel-pf-e-pj",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Estrutura patrimonial. Hook NUMERICO. Numeros conferidos: aliquota maxima de 27,5% do IRPF sobre a parcela acima de R$ 4.664,68 por mes, tabela de 2026 atualizada pela Lei 15.270/2025 (Receita Federal); locacao por PJ no lucro presumido em torno de 11,33% efetivos, subindo para cerca de 14,5% com o adicional de IRPJ acima de R$ 20 mil de lucro mensal (ConJur, 31/07/2026). Estrutura e mecanismo, sem ativo nomeado.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Aluguel recebido como pessoa física paga até 27,5% de imposto de renda"
+    },
+    {
+      "type": "tweet",
+      "text": "A alíquota máxima vale sobre a parcela acima de R$ 4.664,68 por mês"
+    },
+    {
+      "type": "tweet",
+      "text": "O mesmo aluguel dentro de uma pessoa jurídica no lucro presumido fica em torno de 11,33%"
+    },
+    {
+      "type": "tweet",
+      "text": "Mesmo imóvel, mesmo inquilino, mesmo valor recebido\n\nO que muda é a estrutura por onde o dinheiro passa"
+    },
+    {
+      "type": "tweet",
+      "text": "Acima de certo lucro entra o adicional de IRPJ e o efetivo sobe para perto de 14,5%\n\nAinda assim é metade da alíquota da pessoa física"
+    },
+    {
+      "type": "tweet",
+      "text": "Estrutura não serve para pagar menos do que se deve\n\nServe para não pagar o que não se deve",
+      "image": "render/assets/mesa-perfil.jpg",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Aluguel na pessoa física chega a 27,5%. O mesmo aluguel em pessoa jurídica no lucro presumido fica perto de 11,33%.\n\nVocê já comparou os dois números no seu caso?"
+}
