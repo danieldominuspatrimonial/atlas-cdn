@@ -187,6 +187,36 @@ async function jaFoiPublicado(slug) {
   }
 }
 
+// ------------------------------------------------------------------ janela
+/**
+ * Trava de horario.
+ *
+ * Medido entre 05 e 09/ago/2026: o agendamento do GitHub atrasou de 30 minutos
+ * a 4h36. Tres das quatro publicacoes noturnas sairam depois da meia-noite, uma
+ * delas 01h44. Publicar de madrugada joga fora o post.
+ *
+ * A solucao tem duas partes. Os disparos passam a ser AGENDADOS MAIS CEDO que o
+ * alvo, para o atraso ser absorvido, e esta funcao recusa publicar fora das
+ * faixas aceitaveis. Se o atraso for grande demais, o post e pulado em vez de
+ * sair na madrugada. Perder um post custa menos que queimar um.
+ */
+function dentroDaJanela(faixas) {
+  const agora = new Date();
+  // horario de Brasilia, sem depender do fuso do runner
+  const brt = new Date(agora.getTime() - 3 * 3600000);
+  const minutos = brt.getUTCHours() * 60 + brt.getUTCMinutes();
+  const hhmm = `${String(brt.getUTCHours()).padStart(2, '0')}:${String(brt.getUTCMinutes()).padStart(2, '0')}`;
+
+  for (const faixa of faixas.split(',')) {
+    const [ini, fim] = faixa.split('-').map((h) => {
+      const [hh, mm] = h.trim().split(':').map(Number);
+      return hh * 60 + mm;
+    });
+    if (minutos >= ini && minutos <= fim) return { ok: true, agora: hhmm };
+  }
+  return { ok: false, agora: hhmm };
+}
+
 // ------------------------------------------------------------- conferencia
 const hash = (b) => crypto.createHash('sha256').update(b).digest('hex').slice(0, 16);
 
@@ -321,6 +351,21 @@ function conferir(pasta, meta, raiz) {
   await mostrarCota(igUser, token);
 
   // Guarda contra publicacao dupla quando ha mais de uma tentativa agendada.
+  // Trava de horario antes de qualquer outra coisa.
+  const idxJanela = process.argv.indexOf('--somente-entre');
+  if (idxJanela !== -1 && !dryRun) {
+    const faixas = process.argv[idxJanela + 1];
+    if (!faixas || !faixas.includes(':')) morre('--somente-entre exige faixas, ex.: 11:00-15:00,19:00-23:00');
+    const j = dentroDaJanela(faixas);
+    if (!j.ok) {
+      console.log(`\n  agora são ${j.agora} em Brasília, fora das faixas ${faixas}.`);
+      console.log('  O agendamento atrasou demais. Não publico fora de horário.');
+      process.exitCode = 78;
+      return;
+    }
+    console.log(`  horário: ${j.agora} em Brasília, dentro da faixa`);
+  }
+
   const idx = process.argv.indexOf('--pular-se-publicou-em');
   if (idx !== -1 && !dryRun) {
     const janela = Number(process.argv[idx + 1]);

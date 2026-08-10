@@ -29,10 +29,16 @@ on:
     # DESCARTADOS em períodos de carga, e o minuto :00 é o mais concorrido.
     # A segunda tentativa só publica se a primeira não tiver acontecido, porque
     # o publish pergunta à Meta quando saiu o último carrossel antes de agir.
-    - cron: '7 15 * * *'    # 12h07
-    - cron: '47 15 * * *'   # 12h47, repescagem
-    - cron: '7 0 * * *'     # 21h07
-    - cron: '47 0 * * *'    # 21h47, repescagem
+    # Os disparos sao AGENDADOS MAIS CEDO que o alvo de proposito. Entre 05 e
+    # 09/ago o agendamento do GitHub atrasou de 30min a 4h36, e tres das quatro
+    # publicacoes noturnas sairam depois da meia-noite. Agendando cedo, o atraso
+    # cai dentro da faixa aceitavel; e o publish recusa publicar fora dela.
+    - cron: '7 13 * * *'    # dispara 10h07 BRT, alvo 12h
+    - cron: '47 13 * * *'
+    - cron: '27 14 * * *'
+    - cron: '7 22 * * *'    # dispara 19h07 BRT, alvo 21h
+    - cron: '47 22 * * *'
+    - cron: '27 23 * * *'
 
 concurrency:
   group: publicar
@@ -155,7 +161,9 @@ jobs:
           # guarda: se você mandou publicar, publica.
           if [ "${{ github.event_name }}" = "schedule" ]; then
             set +e
-            node publish/publish.js "out/${{ steps.fila.outputs.slug }}" --pular-se-publicou-em 5
+            node publish/publish.js "out/${{ steps.fila.outputs.slug }}" \
+              --somente-entre "11:00-15:00,19:00-23:00" \
+              --pular-se-publicou-em 3
             CODIGO=$?
             set -e
             if [ $CODIGO -eq 78 ]; then
