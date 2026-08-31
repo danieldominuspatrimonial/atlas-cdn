@@ -1,0 +1,44 @@
+{
+  "slug": "caixa-parado-na-empresa",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Investimento geral. Hook CONCEITUAL. Slot meio-dia.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Tem empresário com sete dígitos na conta da empresa achando que está seguro"
+    },
+    {
+      "type": "tweet",
+      "text": "Aquele dinheiro não é seu\n\nEle responde por processo trabalhista, por fornecedor e por sócio"
+    },
+    {
+      "type": "tweet",
+      "text": "E fica parado enquanto a inflação trabalha todo dia contra ele"
+    },
+    {
+      "type": "tweet",
+      "text": "Não é reserva\n\nÉ dinheiro sem destino",
+      "image": "render/assets/escuta.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Caixa sem destino definido acaba financiando a própria empresa de novo",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Sete dígitos parados na conta da empresa não são reserva. São dinheiro sem destino, e ele responde por processo e por sócio. O seu tem destino escrito?"
+}

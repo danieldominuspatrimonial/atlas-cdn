@@ -1,0 +1,48 @@
+{
+  "slug": "dois-por-cento",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo investimento financeiro. Hook NUMERICO, slot NOITE. Com foto. Numeros: 22% na poupanca e 2% na bolsa, caindo de 3% em 2024; Anbima com Datafolha, Raio-X do Investidor Brasileiro 9a edicao. Verificado em 31/ago/2026. CVM: descreve fenomeno, nao recomenda ativo nem classe.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "22% dos brasileiros estão na poupança\n\n2% estão na bolsa"
+    },
+    {
+      "type": "tweet",
+      "text": "O país inteiro trabalha para empresas\n\nQuase ninguém é dono de uma que não seja a própria"
+    },
+    {
+      "type": "tweet",
+      "text": "Você montou uma empresa do zero\n\nE deixa o que sobra dela parado na conta do banco",
+      "image": "render/assets/explicando.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "O dado é da Anbima com o Datafolha, na nona edição do estudo sobre o investidor brasileiro\n\nA fatia na bolsa caiu de 3% para 2% em um ano"
+    },
+    {
+      "type": "tweet",
+      "text": "Não é falta de dinheiro\n\nÉ que ninguém nunca sentou com você para explicar a diferença entre guardar e ser sócio"
+    },
+    {
+      "type": "tweet",
+      "text": "Você é dono do seu negócio\n\nDe mais algum?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "22% dos brasileiros estão na poupança e 2% na bolsa, diz a Anbima. O país inteiro trabalha para empresas e quase ninguém é dono de uma que não seja a própria. Por quê?"
+}

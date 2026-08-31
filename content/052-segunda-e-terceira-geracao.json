@@ -1,0 +1,48 @@
+{
+  "slug": "segunda-e-terceira-geracao",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Estrutura patrimonial (fatia de 15%), tema sucessao. Hook NUMERICO, slot NOITE. Com foto. Numeros: 30% das empresas familiares chegam a 2a geracao (IBGC) e 7% a 3a (PwC). Verificado em 26/ago e reconferido em 31/ago/2026.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "30% das empresas familiares brasileiras chegam à segunda geração\n\n7% chegam à terceira"
+    },
+    {
+      "type": "tweet",
+      "text": "De cada 100 empresas construídas por um pai, 93 não existem quando o neto cresce"
+    },
+    {
+      "type": "tweet",
+      "text": "Não é incompetência do filho\n\nÉ que ninguém escreveu quem decide o quê no dia em que o fundador não estiver"
+    },
+    {
+      "type": "tweet",
+      "text": "A empresa não quebra na sucessão\n\nQuebra na discussão que vem depois",
+      "image": "render/assets/escuta.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Acordo de sócios e governança custam pouco enquanto o fundador está vivo\n\nDepois eles custam a empresa inteira"
+    },
+    {
+      "type": "tweet",
+      "text": "Se você não estivesse aqui amanhã, quem assinaria pela sua empresa?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "30% das empresas familiares chegam à segunda geração e 7% à terceira. Não é incompetência do filho: é que ninguém escreveu as regras. Quem assinaria pela sua empresa amanhã?"
+}

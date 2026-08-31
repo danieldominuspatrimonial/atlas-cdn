@@ -1,0 +1,43 @@
+{
+  "slug": "o-que-continua-entrando",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Investimento geral. Hook CONCEITUAL. Slot meio-dia. Sem foto. Sem promessa de retorno.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Patrimônio não é o que aparece no seu nome"
+    },
+    {
+      "type": "tweet",
+      "text": "É o que continua entrando no mês em que você não trabalhar"
+    },
+    {
+      "type": "tweet",
+      "text": "Faça essa conta agora\n\nSe você parar hoje, quanto entra no mês que vem?"
+    },
+    {
+      "type": "tweet",
+      "text": "Para a maioria dos empresários a resposta é zero, e eles descobrem isso tarde"
+    },
+    {
+      "type": "tweet",
+      "text": "Faturamento alto esconde essa conta por muitos anos\n\nAté o ano em que não esconde mais",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Se você parar hoje, quanto entra na sua conta no mês que vem? Para a maioria dos empresários a resposta é zero. Você já fez essa conta?"
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "quanto-o-seu-rende",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo investimento imobiliario, tema custo real. Hook CONCEITUAL, slot MEIO-DIA. Sem foto. Numero de apoio: 3% a 5% do valor do imovel para transferencia (escritura ~1%, ITBI 2% a 3%, registro ~1%), mantido como faixa, sem precisao falsa.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Pergunte a um dono de imóvel quanto ele rende\n\nEle responde o valor do aluguel"
+    },
+    {
+      "type": "tweet",
+      "text": "Não responde o IPTU, o condomínio dos meses vazios, o reparo, a taxa da imobiliária e o imposto sobre o que recebeu"
+    },
+    {
+      "type": "tweet",
+      "text": "Nenhum desses é grande sozinho\n\nSomados, ficam com boa parte do que o imóvel prometia"
+    },
+    {
+      "type": "tweet",
+      "text": "E existe o custo das duas pontas\n\nDe 3% a 5% do valor só para transferir o nome, na entrada e de novo na saída"
+    },
+    {
+      "type": "tweet",
+      "text": "Todo mundo sabe quanto o imóvel custou\n\nQuase ninguém sabe quanto ele rendeu"
+    },
+    {
+      "type": "tweet",
+      "text": "Você já somou tudo que saiu do seu no ano passado?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Todo mundo sabe quanto o imóvel custou. Quase ninguém sabe quanto ele rendeu depois do IPTU, dos meses vazios e do imposto. Você já somou tudo que saiu do seu?"
+}

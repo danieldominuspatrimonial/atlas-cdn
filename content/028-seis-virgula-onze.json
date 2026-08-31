@@ -1,0 +1,44 @@
+{
+  "slug": "seis-virgula-onze",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Imobiliario. Hook NUMERICO. Slot noite. Fonte: FipeZAP locacao residencial, maio/2026, retorno medio de 6,11% ao ano, 36 cidades. Numero BRUTO, o carrossel trata do liquido.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "O aluguel residencial no Brasil rende 6,11% ao ano, segundo a FipeZAP"
+    },
+    {
+      "type": "tweet",
+      "text": "Esse número é bruto"
+    },
+    {
+      "type": "tweet",
+      "text": "Dele ainda saem imposto de renda, IPTU, condomínio de unidade vazia, manutenção e o mês sem inquilino"
+    },
+    {
+      "type": "tweet",
+      "text": "O que chega na sua conta é bem menos do que 6,11%",
+      "image": "render/assets/mesa-serio.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Todo mundo sabe quanto o imóvel custou\n\nQuase ninguém sabe quanto ele rende de verdade",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "O aluguel residencial rende 6,11% ao ano no Brasil, segundo a FipeZAP, e esse número é bruto. Você já calculou quanto sobrou do seu depois de tudo?"
+}

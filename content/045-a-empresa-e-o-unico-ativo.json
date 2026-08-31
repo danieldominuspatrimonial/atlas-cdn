@@ -1,0 +1,47 @@
+{
+  "slug": "a-empresa-e-o-unico-ativo",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo investimento, tema concentracao no proprio negocio. Hook CONCEITUAL, slot MEIO-DIA. Sem foto. Sem numero.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Se você vendesse sua empresa hoje, o que sobraria?"
+    },
+    {
+      "type": "tweet",
+      "text": "A casa onde você mora e o carro na garagem\n\nEssa é a resposta da maior parte dos empresários que faturam alto"
+    },
+    {
+      "type": "tweet",
+      "text": "Dez anos faturando bem, e o patrimônio construído fora da empresa cabe numa frase"
+    },
+    {
+      "type": "tweet",
+      "text": "O dinheiro entrou, girou dentro da empresa e voltou para a própria empresa\n\nVocê financiou o seu negócio por dez anos e ninguém te pagou por isso"
+    },
+    {
+      "type": "tweet",
+      "text": "Empresa boa é geradora de caixa\n\nEmpresa que é a única coisa que existe é risco concentrado com nome bonito"
+    },
+    {
+      "type": "tweet",
+      "text": "Quanto do que você tem continuaria existindo sem ela?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Se você vendesse sua empresa hoje, o que sobraria? Para a maior parte dos empresários que faturam alto, a resposta é a casa e o carro. E no seu caso?"
+}

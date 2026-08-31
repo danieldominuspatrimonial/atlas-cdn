@@ -1,0 +1,48 @@
+{
+  "slug": "o-ano-que-nao-volta",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo investimento, tema horizonte. Hook CONCEITUAL, slot MEIO-DIA. Com foto. Sem numero.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Você recupera dinheiro perdido\n\nVocê não recupera um ano"
+    },
+    {
+      "type": "tweet",
+      "text": "Todo empresário empurra a organização do próprio patrimônio para o ano que vem"
+    },
+    {
+      "type": "tweet",
+      "text": "E o ano que vem chega com a empresa maior, com mais gente dependendo de você e com menos tempo do que este tinha"
+    },
+    {
+      "type": "tweet",
+      "text": "Não existe uma versão sua com mais tempo\n\nSó existe a com menos",
+      "image": "render/assets/banco-tijolo.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "A decisão que você não tomou este ano não fica parada esperando\n\nEla cobra o ano que vem também"
+    },
+    {
+      "type": "tweet",
+      "text": "Há quantos anos isso está na sua lista?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Dinheiro perdido volta. Ano não volta. Todo empresário empurra a organização do patrimônio para o ano que vem, e o ano que vem chega com menos tempo. Há quantos anos está na sua lista?"
+}

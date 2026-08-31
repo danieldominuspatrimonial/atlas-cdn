@@ -1,0 +1,47 @@
+{
+  "slug": "sessenta-milhoes-e-cento-e-sete",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo investimento financeiro. Hook NUMERICO, slot NOITE. Sem foto. Numeros: 60,6 milhoes de investidores e 107,7 milhoes de nao investidores, Anbima com Datafolha, Raio-X 9a edicao. Verificado em 31/ago/2026.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "60,6 milhões de brasileiros investem em alguma coisa\n\n107,7 milhões não investem em nada"
+    },
+    {
+      "type": "tweet",
+      "text": "Quase dois fora para cada um dentro"
+    },
+    {
+      "type": "tweet",
+      "text": "E dentro do grupo que investe, a maior parte está na poupança"
+    },
+    {
+      "type": "tweet",
+      "text": "Isso não é problema de renda\n\nQuem fatura muito também deixa dinheiro parado, só que a conta parada é maior"
+    },
+    {
+      "type": "tweet",
+      "text": "O empresário que fatura alto costuma ser o que menos organiza o que sobra\n\nPorque o dia dele acaba antes de chegar nessa parte"
+    },
+    {
+      "type": "tweet",
+      "text": "O que você fez com o que sobrou no mês passado?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "60,6 milhões de brasileiros investem e 107,7 milhões não. Não é problema de renda: quem fatura muito também deixa parado, só que em conta maior. O que você fez com o que sobrou?"
+}

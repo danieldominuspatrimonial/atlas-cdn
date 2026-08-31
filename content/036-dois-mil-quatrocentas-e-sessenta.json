@@ -1,0 +1,43 @@
+{
+  "slug": "dois-mil-quatrocentas-e-sessenta",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Investimento geral. Hook NUMERICO. Slot noite. Fonte: MSCI ACWI factsheet 31/jul/2026, 2.460 empresas em 47 paises. Mecanismo, sem recomendacao.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Existe um índice que reúne 2.460 empresas de 47 países"
+    },
+    {
+      "type": "tweet",
+      "text": "Ele leva menos tempo para ser entendido do que uma reunião de segunda-feira"
+    },
+    {
+      "type": "tweet",
+      "text": "Você levou vinte anos para construir uma empresa e a acompanha todo dia"
+    },
+    {
+      "type": "tweet",
+      "text": "E acompanha o resto do seu patrimônio uma vez por ano, quando o contador pede"
+    },
+    {
+      "type": "tweet",
+      "text": "A atenção foi toda para o ativo que já é o mais concentrado que você tem",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Um índice global reúne 2.460 empresas de 47 países. Você acompanha sua empresa todo dia. Com que frequência você olha o resto do seu patrimônio?"
+}

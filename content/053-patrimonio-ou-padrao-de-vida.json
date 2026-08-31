@@ -1,0 +1,47 @@
+{
+  "slug": "patrimonio-ou-padrao-de-vida",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo investimento, tema aparencia versus patrimonio real. Hook CONCEITUAL, slot MEIO-DIA. Sem foto. Sem numero.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Tem gente que acha que tem patrimônio\n\nO que tem é padrão de vida"
+    },
+    {
+      "type": "tweet",
+      "text": "Patrimônio é o que continua entrando quando você para\n\nPadrão de vida é o que sai todo mês, você parando ou não"
+    },
+    {
+      "type": "tweet",
+      "text": "Carro melhor, casa maior e viagem melhor não somam patrimônio\n\nEles aumentam o custo fixo da família e o tempo que você precisa continuar produzindo"
+    },
+    {
+      "type": "tweet",
+      "text": "Quem fatura muito e gasta quase tudo está no mesmo lugar de quem fatura pouco e gasta quase tudo\n\nSó que com fotos melhores"
+    },
+    {
+      "type": "tweet",
+      "text": "A diferença entre os dois não é o quanto entra\n\nÉ o quanto fica"
+    },
+    {
+      "type": "tweet",
+      "text": "Quanto do seu faturamento deste ano virou patrimônio, e quanto virou custo fixo?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Patrimônio é o que continua entrando quando você para. Padrão de vida é o que sai todo mês de qualquer jeito. A diferença não é o quanto entra, é o quanto fica. E no seu caso?"
+}

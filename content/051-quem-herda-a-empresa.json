@@ -1,0 +1,48 @@
+{
+  "slug": "quem-herda-a-empresa",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Estrutura patrimonial (fatia de 15%), tema sucessao. Hook CONCEITUAL, slot MEIO-DIA. Com foto. Sem numero.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Seu filho herda a empresa\n\nEle não herda o telefone do fornecedor que te atende no sábado"
+    },
+    {
+      "type": "tweet",
+      "text": "O que você chama de empresa é metade estrutura e metade você"
+    },
+    {
+      "type": "tweet",
+      "text": "A metade que é você não entra no inventário"
+    },
+    {
+      "type": "tweet",
+      "text": "E é ela que segura o faturamento",
+      "image": "render/assets/casal-campo.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Empresa que passa de geração sem acordo de sócios e sem governança definida costuma valer menos no ano seguinte, e a família descobre isso junta"
+    },
+    {
+      "type": "tweet",
+      "text": "O que da sua empresa continua funcionando na semana em que você não aparece?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Seu filho herda a empresa, não o telefone do fornecedor que te atende no sábado. Essa metade não entra no inventário. O que continua funcionando na semana em que você não aparece?"
+}

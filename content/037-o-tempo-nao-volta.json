@@ -1,0 +1,44 @@
+{
+  "slug": "o-tempo-nao-volta",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Investimento geral. Hook CONCEITUAL. Slot meio-dia. Sem promessa de rentabilidade.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Dinheiro perdido volta"
+    },
+    {
+      "type": "tweet",
+      "text": "Cliente perdido volta"
+    },
+    {
+      "type": "tweet",
+      "text": "Ano perdido não volta"
+    },
+    {
+      "type": "tweet",
+      "text": "O empresário de cinquenta anos que começou a organizar patrimônio ontem tem as mesmas opções de antes, com metade do tempo",
+      "image": "render/assets/casal-campo.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Capital sem tempo pela frente é só capital\n\nE tempo é a única coisa que ninguém consegue repor",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Dinheiro perdido volta. Ano perdido não. O empresário que começa aos cinquenta tem as mesmas opções com metade do tempo. Quantos anos você já deixou passar?"
+}

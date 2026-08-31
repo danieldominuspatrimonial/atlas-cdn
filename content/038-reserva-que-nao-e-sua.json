@@ -1,0 +1,44 @@
+{
+  "slug": "reserva-que-nao-e-sua",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Dor ampla. Hook NUMERICO. Slot noite. Fonte: Anbima e Datafolha, Raio-X do Investidor, 31% sem reserva de emergencia.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "31% dos brasileiros dizem não ter reserva nenhuma para uma emergência"
+    },
+    {
+      "type": "tweet",
+      "text": "Entre empresários o número engana"
+    },
+    {
+      "type": "tweet",
+      "text": "Muitos têm caixa\n\nMas o caixa é da empresa, não é deles"
+    },
+    {
+      "type": "tweet",
+      "text": "Se a empresa parar, para junto",
+      "image": "render/assets/corredor-bw.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Reserva que mora dentro do próprio risco não é reserva",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "31% dos brasileiros dizem não ter reserva de emergência, segundo a Anbima. Entre empresários o caixa quase sempre é da empresa. O seu está separado?"
+}

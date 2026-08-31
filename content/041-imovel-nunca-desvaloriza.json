@@ -1,0 +1,47 @@
+{
+  "slug": "imovel-nunca-desvaloriza",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo investimento imobiliario, tema liquidez e crenca. Hook CONCEITUAL, slot MEIO-DIA. Sem foto. Sem numero. Ataca a crenca, nao o ativo.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Imóvel nunca desvaloriza é a frase mais cara que o brasileiro repete"
+    },
+    {
+      "type": "tweet",
+      "text": "Ela não é falsa\n\nEla é incompleta"
+    },
+    {
+      "type": "tweet",
+      "text": "O imóvel não desvaloriza no anúncio\n\nEle desvaloriza nos meses vazios, no IPTU, no reparo e no imposto sobre o aluguel recebido"
+    },
+    {
+      "type": "tweet",
+      "text": "E desvaloriza principalmente no tempo que você espera até alguém aceitar o preço que você pediu"
+    },
+    {
+      "type": "tweet",
+      "text": "Quem repete essa frase quase sempre nunca vendeu nenhum\n\nQuem já vendeu fala outra coisa"
+    },
+    {
+      "type": "tweet",
+      "text": "Quem te ensinou que imóvel é seguro já tinha vendido algum?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Imóvel nunca desvaloriza é a frase mais cara que o brasileiro repete. Ela não é falsa, é incompleta. Quem te ensinou isso já tinha vendido algum?"
+}

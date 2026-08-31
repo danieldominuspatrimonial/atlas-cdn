@@ -1,0 +1,48 @@
+{
+  "slug": "dezesseis-meses",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo investimento imobiliario, tema liquidez. Hook NUMERICO, slot NOITE. Com foto. Numero: 16 meses ou 480 dias de tempo medio para vender um apartamento no Brasil, dado da Abrainc. Verificado em 31/ago/2026. O fecho forca o leitor a admitir o desconto que aceitaria.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "O tempo médio para vender um apartamento no Brasil é de 16 meses\n\n480 dias"
+    },
+    {
+      "type": "tweet",
+      "text": "480 dias entre decidir vender e ver o dinheiro na conta"
+    },
+    {
+      "type": "tweet",
+      "text": "Nesse período você paga IPTU, condomínio e manutenção de um imóvel que já não quer mais"
+    },
+    {
+      "type": "tweet",
+      "text": "O dado é da Abrainc\n\nE vale para o seu também",
+      "image": "render/assets/terno-bw.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Ninguém escolhe o mês em que vai precisar do dinheiro\n\nE o imóvel leva o tempo que levar"
+    },
+    {
+      "type": "tweet",
+      "text": "Se você precisasse do valor dele em 60 dias, quanto aceitaria receber?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "O tempo médio para vender um apartamento no Brasil é de 16 meses, segundo a Abrainc. São 480 dias pagando IPTU. Se precisasse do valor em 60 dias, quanto aceitaria receber?"
+}

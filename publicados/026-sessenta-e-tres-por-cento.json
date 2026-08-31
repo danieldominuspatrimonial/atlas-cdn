@@ -1,0 +1,44 @@
+{
+  "slug": "sessenta-e-tres-por-cento",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Investimento geral. Hook NUMERICO. Slot noite. Fonte: MSCI ACWI factsheet 31/jul/2026, EUA 63,55%, Japao 5,05%, Reino Unido 3,19%, Taiwan 3,14%, Canada 3,01%, outros 22,07%. Mecanismo, sem ativo nomeado.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "No índice que reúne as ações do mundo inteiro, os Estados Unidos são 63,55%\n\nO Brasil não aparece entre os cinco maiores"
+    },
+    {
+      "type": "tweet",
+      "text": "Ele está dentro dos 22% chamados de outros"
+    },
+    {
+      "type": "tweet",
+      "text": "Isso não é opinião sobre país\n\nÉ o tamanho relativo de cada economia dentro do mesmo índice"
+    },
+    {
+      "type": "tweet",
+      "text": "E o seu patrimônio está inteiro dentro desses 22%",
+      "image": "render/assets/oculos-firme.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Ninguém decidiu isso\n\nFoi só onde a vida aconteceu",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "No índice global de ações os Estados Unidos são 63,55% e o Brasil está dentro dos 22% de outros. Quanto do seu patrimônio está fora do Brasil hoje?"
+}

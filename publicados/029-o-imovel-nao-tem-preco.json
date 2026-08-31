@@ -1,0 +1,43 @@
+{
+  "slug": "o-imovel-nao-tem-preco",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Imobiliario. Hook CONCEITUAL. Slot meio-dia. Liquidez. Sem foto.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Você sabe quanto vale o seu imóvel?"
+    },
+    {
+      "type": "tweet",
+      "text": "Não sabe\n\nVocê sabe quanto pediram pelo apartamento do vizinho"
+    },
+    {
+      "type": "tweet",
+      "text": "O valor de um imóvel só existe no dia em que alguém aceita pagar por ele"
+    },
+    {
+      "type": "tweet",
+      "text": "Até lá é estimativa de corretor e conversa de família"
+    },
+    {
+      "type": "tweet",
+      "text": "Patrimônio que você não consegue transformar em dinheiro em trinta dias não é reserva\n\nÉ posição",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "O valor de um imóvel só existe no dia em que alguém aceita pagar. Até lá é estimativa. Quanto do seu patrimônio vira dinheiro em trinta dias?"
+}

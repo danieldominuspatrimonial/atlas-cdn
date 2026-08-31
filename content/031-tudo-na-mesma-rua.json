@@ -1,0 +1,44 @@
+{
+  "slug": "tudo-na-mesma-rua",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Imobiliario com borda de alocacao. Hook CONCEITUAL. Slot meio-dia.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "A empresa fica na cidade onde você mora"
+    },
+    {
+      "type": "tweet",
+      "text": "O imóvel alugado fica a vinte minutos dela"
+    },
+    {
+      "type": "tweet",
+      "text": "A sala comercial fica no mesmo bairro"
+    },
+    {
+      "type": "tweet",
+      "text": "Você não montou um patrimônio\n\nMontou a mesma posição três vezes no mesmo endereço",
+      "image": "render/assets/banco-tijolo.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Se a região muda, os três mudam juntos, e no mesmo mês",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Empresa, imóvel alugado e sala comercial no mesmo bairro não são três coisas. São uma só. Quantos endereços diferentes o seu patrimônio ocupa?"
+}

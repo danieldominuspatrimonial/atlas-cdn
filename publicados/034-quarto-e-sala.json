@@ -1,0 +1,44 @@
+{
+  "slug": "quarto-e-sala",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Imobiliario. Hook NUMERICO. Slot noite. Fonte: FipeZAP maio/2026, 6,77% ao ano em unidades de um dormitorio contra 4,90% em unidades de quatro ou mais.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Um imóvel de um dormitório rende 6,77% ao ano\n\nUm de quatro dormitórios rende 4,90%"
+    },
+    {
+      "type": "tweet",
+      "text": "O imóvel maior custa mais, vale mais e rende menos"
+    },
+    {
+      "type": "tweet",
+      "text": "Ele é mais difícil de alugar, fica mais tempo vazio e tem manutenção maior"
+    },
+    {
+      "type": "tweet",
+      "text": "O que impressiona na conversa não é o que sustenta a conta",
+      "image": "render/assets/terno-bw.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Patrimônio bonito e patrimônio produtivo raramente são o mesmo",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Imóvel de um dormitório rende 6,77% ao ano e o de quatro rende 4,90%, segundo a FipeZAP. O seu foi escolhido para render ou para mostrar?"
+}

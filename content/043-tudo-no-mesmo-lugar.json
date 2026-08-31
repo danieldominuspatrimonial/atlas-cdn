@@ -1,0 +1,48 @@
+{
+  "slug": "tudo-no-mesmo-lugar",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo investimento, tema concentracao geografica. Hook CONCEITUAL, slot MEIO-DIA. Com foto. Sem numero. Mecanismo da tese sem nomear ativo, secao 6.2.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Sua empresa está no Brasil\n\nSeu imóvel está no Brasil\n\nSua conta está no Brasil"
+    },
+    {
+      "type": "tweet",
+      "text": "E você chama isso de patrimônio dividido"
+    },
+    {
+      "type": "tweet",
+      "text": "Não é diversificação\n\nÉ a mesma decisão repetida três vezes",
+      "image": "render/assets/corredor-bw.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Se o país tiver um ano ruim, as três perdem valor no mesmo ano, e você descobre as três juntas"
+    },
+    {
+      "type": "tweet",
+      "text": "Concentração não aparece no extrato\n\nEla aparece no dia em que você precisa de uma das três e nenhuma serve"
+    },
+    {
+      "type": "tweet",
+      "text": "Se o Brasil tiver um ano ruim, o que sobra de pé?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Empresa, imóvel e conta no mesmo país não é patrimônio dividido. É a mesma decisão repetida três vezes. Se o Brasil tiver um ano ruim, o que sobra de pé?"
+}

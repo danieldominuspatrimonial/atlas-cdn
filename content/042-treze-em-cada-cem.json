@@ -1,0 +1,47 @@
+{
+  "slug": "treze-em-cada-cem",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo investimento imobiliario, tema imovel parado. Hook NUMERICO, slot NOITE. Sem foto. Numeros: 11,4 milhoes de domicilios vagos e 13 em cada 100 (eram 9 em 2010), Censo 2022 do IBGE. Verificado em 31/ago/2026.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "O Censo do IBGE contou 11,4 milhões de domicílios vagos no Brasil"
+    },
+    {
+      "type": "tweet",
+      "text": "13 de cada 100 imóveis do país estão vazios\n\nEm 2010 eram 9"
+    },
+    {
+      "type": "tweet",
+      "text": "Cada um desses tem dono\n\nE cada dono continua dizendo em jantar de família que investiu bem"
+    },
+    {
+      "type": "tweet",
+      "text": "Imóvel vazio não rende zero\n\nEle rende negativo, todo mês, com IPTU, condomínio e manutenção saindo da sua conta"
+    },
+    {
+      "type": "tweet",
+      "text": "Ativo é o que coloca dinheiro na sua conta\n\nO resto é despesa com escritura e uma história bonita"
+    },
+    {
+      "type": "tweet",
+      "text": "Quantos meses o seu ficou vazio no último ano?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "O IBGE contou 11,4 milhões de domicílios vagos no Brasil. Cada um tem dono, e cada dono diz que investiu bem. Quantos meses o seu ficou vazio no último ano?"
+}

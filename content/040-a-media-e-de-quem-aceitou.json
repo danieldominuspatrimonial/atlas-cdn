@@ -1,0 +1,48 @@
+{
+  "slug": "a-media-e-de-quem-aceitou",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo investimento imobiliario. Hook NUMERICO, slot NOITE. Com foto. Vira a chave: a media nao e caracteristica do ativo, e resultado da decisao. Numeros: 6,14% de retorno bruto medio; Recife 8,47%; quatro ou mais dormitorios 4,84%. Indice FipeZAP de Locacao Residencial, informe de 14/ago/2026. Verificado em 31/ago/2026. CVM: descreve dispersao publicada, nao promete retorno.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "O aluguel residencial rende 6,14% ao ano no Brasil\n\nEsse número é uma média, e média não é destino"
+    },
+    {
+      "type": "tweet",
+      "text": "Recife devolve 8,47% ao ano\n\nImóvel de quatro dormitórios devolve 4,84%\n\nMesmo país, mesmo mês, quase o dobro de diferença"
+    },
+    {
+      "type": "tweet",
+      "text": "A média existe porque a maior parte das pessoas aceitou o imóvel que apareceu, no bairro que já conhecia, do jeito que o corretor mostrou"
+    },
+    {
+      "type": "tweet",
+      "text": "Ninguém escolheu 4,84%\n\nSó não escolheu nada",
+      "image": "render/assets/mesa-serio.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Retorno de imóvel não é característica do imóvel\n\nÉ o resultado da decisão de quem assinou"
+    },
+    {
+      "type": "tweet",
+      "text": "Você sabe qual é o seu número, ou está usando a média do país como resposta?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "6,14% é a média do aluguel residencial no Brasil. Recife devolve 8,47% e imóvel grande devolve 4,84%. Média é o retorno de quem não escolheu. Você sabe o seu número?"
+}

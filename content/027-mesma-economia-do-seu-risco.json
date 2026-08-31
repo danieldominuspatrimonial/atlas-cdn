@@ -1,0 +1,44 @@
+{
+  "slug": "mesma-economia-do-seu-risco",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Investimento geral. Hook CONCEITUAL. Slot meio-dia. Concentracao geografica e cambial. Sem ativo nomeado.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Sua empresa fatura em real\n\nSeu imóvel está em real\n\nSua conta está em real"
+    },
+    {
+      "type": "tweet",
+      "text": "E o seu risco de vida inteira também"
+    },
+    {
+      "type": "tweet",
+      "text": "Quando o país trava, trava tudo junto"
+    },
+    {
+      "type": "tweet",
+      "text": "Não existe parte do seu patrimônio que não sinta",
+      "image": "render/assets/corredor-bw.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Concentração não é o que você escolheu\n\nÉ o que sobra quando ninguém escolhe nada",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Sua empresa, seu imóvel e sua conta estão na mesma economia do seu risco. Quando o país trava, trava tudo junto. O que no seu patrimônio não depende do Brasil?"
+}

@@ -1,0 +1,44 @@
+{
+  "slug": "recife-e-vitoria",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Imobiliario. Hook NUMERICO. Slot noite. Fonte: FipeZAP maio/2026, retorno de locacao residencial de 8,54% em Recife e 4,15% em Vitoria, entre 22 capitais.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "O mesmo tipo de imóvel rende 8,54% ao ano no Recife e 4,15% em Vitória"
+    },
+    {
+      "type": "tweet",
+      "text": "É o dobro, pela mesma quantia investida"
+    },
+    {
+      "type": "tweet",
+      "text": "A diferença não está no imóvel\n\nEstá no endereço"
+    },
+    {
+      "type": "tweet",
+      "text": "Quem escolhe imóvel pelo gosto de morar nele está escolhendo pelo critério errado",
+      "image": "render/assets/mesa-perfil.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Imóvel para render e imóvel para viver são duas decisões separadas\n\nQuase ninguém separa",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "O aluguel residencial rende 8,54% ao ano no Recife e 4,15% em Vitória, segundo a FipeZAP. Você escolheu o seu pelo retorno ou por gostar dele?"
+}

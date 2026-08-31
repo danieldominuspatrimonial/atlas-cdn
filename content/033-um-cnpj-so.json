@@ -1,0 +1,44 @@
+{
+  "slug": "um-cnpj-so",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Dor ampla. Hook CONCEITUAL. Slot meio-dia.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Você tem um patrimônio inteiro\n\nE ele tem um CNPJ só"
+    },
+    {
+      "type": "tweet",
+      "text": "Se o setor muda, muda tudo\n\nSe o cliente grande sai, sai tudo"
+    },
+    {
+      "type": "tweet",
+      "text": "Ninguém chama isso de risco enquanto a empresa vai bem"
+    },
+    {
+      "type": "tweet",
+      "text": "Ir bem hoje não é o mesmo que ir bem sempre",
+      "image": "render/assets/oculos-firme.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Patrimônio inteiro em um lugar só não é concentração escolhida\n\nÉ uma decisão que ninguém tomou de propósito",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Seu patrimônio inteiro tem um CNPJ só. Ninguém chama isso de risco enquanto a empresa vai bem. Quanto do que você tem hoje está fora dela?"
+}

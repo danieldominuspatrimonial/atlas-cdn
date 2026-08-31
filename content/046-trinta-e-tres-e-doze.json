@@ -1,0 +1,47 @@
+{
+  "slug": "trinta-e-tres-e-doze",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo investimento financeiro. Hook NUMERICO, slot NOITE. Sem foto. Numeros: 33% pouparam em 2025 e 12% converteram em investimento (Anbima/Datafolha, Raio-X 9a edicao); IPCA de 4,44% em 12 meses ate julho/2026. Verificado em 31/ago/2026.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "33% dos brasileiros conseguiram guardar dinheiro em 2025\n\n12% transformaram isso em investimento"
+    },
+    {
+      "type": "tweet",
+      "text": "Os outros 21% fizeram o esforço inteiro e deixaram tudo parado na conta"
+    },
+    {
+      "type": "tweet",
+      "text": "Guardar virou sinônimo de investir, e não é\n\nDinheiro parado perde valor todo mês sem você assinar nada"
+    },
+    {
+      "type": "tweet",
+      "text": "A inflação de doze meses até julho foi de 4,44%\n\nQuem deixou parado entregou isso de graça"
+    },
+    {
+      "type": "tweet",
+      "text": "A parte difícil você já fez\n\nA que faltou não custa esforço, custa decisão"
+    },
+    {
+      "type": "tweet",
+      "text": "Quanto do que você guardou este ano ainda está parado?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "33% dos brasileiros guardaram dinheiro em 2025 e só 12% transformaram isso em investimento. Os outros fizeram o esforço inteiro e pararam ali. Quanto do seu está parado?"
+}

@@ -1,0 +1,44 @@
+{
+  "slug": "tres-a-cinco-por-cento",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Imobiliario. Hook NUMERICO. Slot noite. Fonte: escritura ~1%, ITBI 2 a 3%, registro ~1%, total de 3% a 5% do valor do imovel. Exemplo real de 4,7% sobre R$ 400 mil.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Trocar o nome de um imóvel custa de 3% a 5% do valor dele"
+    },
+    {
+      "type": "tweet",
+      "text": "Escritura, ITBI e registro\n\nAntes de qualquer reforma e antes do primeiro aluguel"
+    },
+    {
+      "type": "tweet",
+      "text": "Num imóvel de R$ 800 mil são até R$ 40 mil que saem e não voltam"
+    },
+    {
+      "type": "tweet",
+      "text": "E saem de novo no dia em que você sair dele",
+      "image": "render/assets/explicando.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "É um investimento que cobra pedágio na entrada e na saída",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Escritura, ITBI e registro somam de 3% a 5% do valor do imóvel, e cobram de novo na saída. Você contou esse custo no retorno do seu último?"
+}
