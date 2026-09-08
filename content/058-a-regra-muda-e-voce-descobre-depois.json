@@ -1,0 +1,48 @@
+{
+  "slug": "a-regra-muda-e-voce-descobre-depois",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo dor ampla, relacao com o Estado. Hook CONCEITUAL, slot NOITE. Com foto. Sem numero.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Toda regra que muda no Brasil chega para você pelo contador\n\nDepois que já está valendo"
+    },
+    {
+      "type": "tweet",
+      "text": "Você não foi consultado, não foi avisado e não teve tempo de se organizar\n\nSó recebeu a conta"
+    },
+    {
+      "type": "tweet",
+      "text": "O empresário brasileiro descobre a mudança quando ela já saiu do caixa dele"
+    },
+    {
+      "type": "tweet",
+      "text": "Você reage a uma decisão que já foi tomada sem você",
+      "image": "render/assets/explicando.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Quem tem estrutura montada antes não reage\n\nQuem tem estrutura montada antes já estava do outro lado da mudança"
+    },
+    {
+      "type": "tweet",
+      "text": "Quantas vezes isso já aconteceu com você?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Toda regra nova no Brasil chega ao empresário pelo contador, depois de já estar valendo. Quem tinha estrutura montada antes não precisou reagir. Quantas vezes isso já aconteceu com você?"
+}

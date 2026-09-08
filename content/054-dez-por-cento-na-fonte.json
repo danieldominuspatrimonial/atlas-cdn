@@ -1,0 +1,48 @@
+{
+  "slug": "dez-por-cento-na-fonte",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo tributo e fluxo PJ-PF. Hook NUMERICO, slot NOITE. Com foto. Numeros: 10% retidos na fonte sobre lucro pago a pessoa fisica acima de R$ 50 mil por mes por empresa, vigente desde 1o de janeiro de 2026. Fonte primaria: texto da Lei 15.270, de 26/11/2025, art. 6o-A e art. 8o, Camara dos Deputados. Verificado em 07/set/2026. CVM: tributo e fluxo societario, territorio seguro, nenhum ativo nomeado.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Desde janeiro, tirar mais de 50 mil por mês da sua própria empresa custa 10% a mais"
+    },
+    {
+      "type": "tweet",
+      "text": "A empresa já pagou imposto sobre o lucro\n\nAgora o dono paga de novo para receber o que sobrou"
+    },
+    {
+      "type": "tweet",
+      "text": "A Lei 15.270 vale desde 1º de janeiro de 2026\n\nSão 10% retidos na fonte sobre o que passar de 50 mil no mês, empresa por empresa"
+    },
+    {
+      "type": "tweet",
+      "text": "Você não ficou mais rico\n\nA regra de tirar o dinheiro é que ficou mais cara",
+      "image": "render/assets/mesa-serio.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Quem retira 40 mil por mês não sente nada\n\nQuem construiu uma empresa que sustenta a família inteira sente todo mês"
+    },
+    {
+      "type": "tweet",
+      "text": "Quanto isso vai custar na sua empresa este ano?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Desde 1º de janeiro, lucro acima de 50 mil por mês tem 10% retidos na fonte. A empresa paga sobre o lucro e o dono paga de novo para receber. Você já fez essa conta?"
+}

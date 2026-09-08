@@ -1,0 +1,48 @@
+{
+  "slug": "mil-quinhentas-e-uma-horas",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo dor ampla, custo de obedecer. Hook NUMERICO, slot NOITE. Com foto. Numeros: ate 1.501 horas por ano para apurar e pagar imposto no Brasil contra 159 horas na media da OCDE, dado do Banco Mundial. Verificado em 07/set/2026.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Uma empresa brasileira gasta até 1.501 horas por ano só para apurar e pagar imposto"
+    },
+    {
+      "type": "tweet",
+      "text": "A média dos países da OCDE é 159 horas\n\nO Brasil usa quase dez vezes mais tempo para fazer a mesma coisa"
+    },
+    {
+      "type": "tweet",
+      "text": "O dado é do Banco Mundial\n\nSão 1.501 horas que ninguém usou para vender, contratar ou atender cliente"
+    },
+    {
+      "type": "tweet",
+      "text": "Isso é quase um ano inteiro de uma pessoa\n\nSó para obedecer",
+      "image": "render/assets/corredor-bw.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "E ninguém devolve essas horas\n\nElas saem do seu time, do seu caixa e do seu fim de semana"
+    },
+    {
+      "type": "tweet",
+      "text": "Quantas horas a sua empresa gastou com imposto no mês passado?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Empresa brasileira gasta até 1.501 horas por ano só para apurar e pagar imposto, contra 159 na média da OCDE, diz o Banco Mundial. Quantas horas isso custou na sua?"
+}

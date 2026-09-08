@@ -1,0 +1,47 @@
+{
+  "slug": "sua-familia-sabe-onde-esta-o-que",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo estrutura patrimonial e provedor. Hook CONCEITUAL, slot MEIO-DIA. Sem foto. Sem numero. Escrito para o teste do envio: e a peca da leva com maior chance de ser mandada para o conjuge ou para o socio.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Se você não estiver aqui na semana que vem, sua família sabe onde está o quê?"
+    },
+    {
+      "type": "tweet",
+      "text": "Sabe quais são as contas, quem são os sócios, o que a empresa deve e o que ela tem a receber?"
+    },
+    {
+      "type": "tweet",
+      "text": "Na maioria das famílias brasileiras a resposta é não\n\nE não é por falta de amor, é porque essa conversa nunca é urgente"
+    },
+    {
+      "type": "tweet",
+      "text": "O empresário protege a família da preocupação e entrega a ela um problema que ela não vai saber resolver"
+    },
+    {
+      "type": "tweet",
+      "text": "Quem fica não precisa de dinheiro no primeiro mês\n\nPrecisa saber o que existe, onde está e quem chamar"
+    },
+    {
+      "type": "tweet",
+      "text": "Sua família saberia por onde começar?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Se você não estiver aqui na semana que vem, sua família sabe quais são as contas, quem são os sócios e o que a empresa deve? Na maioria das famílias a resposta é não. E na sua?"
+}

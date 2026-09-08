@@ -1,0 +1,48 @@
+{
+  "slug": "quem-recebe-nao-recebe-o-comando",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo estrutura patrimonial, sucessao e governanca. Hook CONCEITUAL, slot NOITE. Com foto. Sem numero. CVM: sucessao e governanca, territorio seguro.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Seus filhos vão herdar a sua empresa\n\nNão vão herdar o seu comando"
+    },
+    {
+      "type": "tweet",
+      "text": "Herdeiro recebe cota\n\nQuem recebe cota não recebe a confiança do banco, do fornecedor nem do time"
+    },
+    {
+      "type": "tweet",
+      "text": "A empresa que depende de uma pessoa vale muito enquanto essa pessoa está lá\n\nE vale outra coisa no dia seguinte"
+    },
+    {
+      "type": "tweet",
+      "text": "O que você deixa não é a empresa\n\nÉ a empresa sem você",
+      "image": "render/assets/casal-campo.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Por isso sucessão não começa com documento\n\nComeça no dia em que uma decisão importante é tomada sem você na sala"
+    },
+    {
+      "type": "tweet",
+      "text": "Quantas decisões da sua empresa não passam por você hoje?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Seus filhos herdam a cota, não o seu comando. A empresa que depende de uma pessoa vale muito enquanto ela está lá, e vale outra coisa no dia seguinte. Quantas decisões não passam por você?"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "quatro-milhoes-e-oitocentos",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo dor ampla e estrutura, faixa de tributacao. Hook NUMERICO, slot MEIO-DIA. Com foto. Numero: teto do Simples Nacional em R$ 4,8 milhoes por ano, sem correcao desde 2018. Verificado em 07/set/2026.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "O teto do Simples Nacional é 4,8 milhões por ano\n\nE está nesse valor desde 2018"
+    },
+    {
+      "type": "tweet",
+      "text": "A empresa que faturava 4 milhões em 2018 e só acompanhou a inflação hoje está fora, sem ter crescido de verdade"
+    },
+    {
+      "type": "tweet",
+      "text": "São oito anos sem correção\n\nO teto ficou parado, o custo de tudo subiu, e a conta de sair do Simples chega inteira"
+    },
+    {
+      "type": "tweet",
+      "text": "Você não mudou de porte\n\nO governo é que parou de atualizar a régua",
+      "image": "render/assets/terno-azul.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "E a troca de regime não é gradual\n\nA empresa atravessa a faixa e passa a viver com outra estrutura de imposto no mês seguinte"
+    },
+    {
+      "type": "tweet",
+      "text": "A sua empresa está a quanto do teto hoje?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "O teto do Simples Nacional está em 4,8 milhões desde 2018. Oito anos parado enquanto o custo de tudo subiu. Quem só acompanhou a inflação saiu do regime sem crescer. E a sua empresa?"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "voce-organiza-a-de-todo-mundo",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo dor ampla, esforco nao reconhecido e patrimonio pessoal. Hook CONCEITUAL, slot MEIO-DIA. Com foto. Sem numero.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Você organiza a folha de quarenta pessoas\n\nO estoque, a agenda comercial e o caixa da empresa"
+    },
+    {
+      "type": "tweet",
+      "text": "E nunca sentou uma tarde inteira para organizar o que é seu"
+    },
+    {
+      "type": "tweet",
+      "text": "Todo empresário sabe de cabeça a margem do próprio produto\n\nE não sabe de cabeça o que aconteceu com o próprio patrimônio no ano passado"
+    },
+    {
+      "type": "tweet",
+      "text": "Você cuida do que é da empresa\n\nO que é seu ficou para depois",
+      "image": "render/assets/escuta.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "Isso não é desleixo\n\nÉ que a empresa cobra hoje e o patrimônio só cobra daqui a dez anos, de uma vez só"
+    },
+    {
+      "type": "tweet",
+      "text": "Que dia da semana é o dia de olhar o que é seu?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Você organiza a folha, o estoque, a agenda e o caixa da empresa, e nunca sentou uma tarde para organizar o que é seu. Que dia da semana é o dia de olhar o que é seu?"
+}

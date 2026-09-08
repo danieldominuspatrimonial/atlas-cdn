@@ -1,0 +1,47 @@
+{
+  "slug": "trocou-um-chefe-por-quarenta",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo dor ampla, dependencia da operacao. Hook CONCEITUAL, slot MEIO-DIA. Sem foto. Sem numero.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Você abriu uma empresa para não ter patrão\n\nE hoje responde a trinta pessoas, a três bancos e a um cliente grande"
+    },
+    {
+      "type": "tweet",
+      "text": "Ninguém te demite\n\nMas você também não consegue pedir as contas"
+    },
+    {
+      "type": "tweet",
+      "text": "O empresário brasileiro trocou um chefe por quarenta e chamou isso de liberdade"
+    },
+    {
+      "type": "tweet",
+      "text": "Enquanto a empresa depender de você para funcionar, você não é dono dela\n\nVocê é a parte mais cara dela"
+    },
+    {
+      "type": "tweet",
+      "text": "Dono é quem pode sair da rotina e continuar recebendo\n\nO resto é emprego com risco de sócio"
+    },
+    {
+      "type": "tweet",
+      "text": "Quanto tempo a sua empresa aguenta sem você?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Você abriu uma empresa para não ter patrão e hoje responde a trinta pessoas, três bancos e um cliente grande. Ninguém te demite e você também não pede as contas. Quanto tempo ela aguenta sem você?"
+}

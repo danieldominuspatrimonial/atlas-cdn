@@ -1,0 +1,48 @@
+{
+  "slug": "cento-e-cinquenta-dias",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo dor ampla, carga tributaria sobre a pessoa. Hook NUMERICO, slot MEIO-DIA. Com foto. Numero: 150 dias de trabalho em 2026 so para pagar tributos, ate 30 de maio, estudo do IBPT. Verificado em 07/set/2026. A data exata (30 de maio) foi conferida: a versao aproximada \"ate o fim de maio\" ja causou erro antes.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "O brasileiro trabalhou 150 dias em 2026 só para pagar imposto"
+    },
+    {
+      "type": "tweet",
+      "text": "Cinco meses do ano inteiro\n\nDe 1º de janeiro até 30 de maio, tudo que você produziu foi do Estado"
+    },
+    {
+      "type": "tweet",
+      "text": "O cálculo é do IBPT e considera renda, consumo e patrimônio juntos"
+    },
+    {
+      "type": "tweet",
+      "text": "Você começou a trabalhar para você em junho",
+      "image": "render/assets/banco-tijolo.jpg"
+    },
+    {
+      "type": "tweet",
+      "text": "E na empresa a conta é pior, porque ela paga antes de você receber qualquer coisa\n\nO imposto sai do faturamento, não do que sobra"
+    },
+    {
+      "type": "tweet",
+      "text": "O que você faria com cinco meses de trabalho de volta?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "O brasileiro trabalhou 150 dias em 2026 só para pagar imposto, calcula o IBPT. De 1º de janeiro a 30 de maio, tudo foi do Estado. O que você faria com cinco meses de volta?"
+}

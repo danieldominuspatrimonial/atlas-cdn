@@ -1,0 +1,47 @@
+{
+  "slug": "o-dono-e-o-ultimo",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo dor ampla, provedor e ordem de pagamento. Hook CONCEITUAL, slot MEIO-DIA. Sem foto. Sem numero.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "Na sua empresa todo mundo recebe em dia\n\nMenos você"
+    },
+    {
+      "type": "tweet",
+      "text": "Funcionário recebe no quinto dia útil\n\nFornecedor recebe no vencimento\n\nBanco recebe antes de todo mundo"
+    },
+    {
+      "type": "tweet",
+      "text": "O dono recebe o que sobra\n\nE em quase toda empresa brasileira o que sobra não é uma decisão, é um resto"
+    },
+    {
+      "type": "tweet",
+      "text": "Você é o único sócio que aceita receber por último e ainda responde sozinho por tudo que der errado"
+    },
+    {
+      "type": "tweet",
+      "text": "Isso não é sacrifício de fase\n\nÉ uma empresa desenhada para pagar todo mundo antes de pagar quem a construiu"
+    },
+    {
+      "type": "tweet",
+      "text": "Quando foi a última vez que você se pagou primeiro?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Funcionário recebe no quinto dia útil, fornecedor no vencimento, banco antes de todo mundo. O dono recebe o resto. Quando foi a última vez que você se pagou primeiro?"
+}

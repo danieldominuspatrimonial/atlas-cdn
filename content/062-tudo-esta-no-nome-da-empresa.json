@@ -1,0 +1,47 @@
+{
+  "slug": "tudo-esta-no-nome-da-empresa",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo estrutura patrimonial, separacao PF e PJ. Hook CONCEITUAL, slot NOITE. Sem foto. Sem numero. CVM: estrutura societaria, territorio seguro.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "O carro é da empresa\n\nA sala é da empresa\n\nO cartão é da empresa"
+    },
+    {
+      "type": "tweet",
+      "text": "E se alguém perguntar o que é seu, no seu nome, você leva um tempo para responder"
+    },
+    {
+      "type": "tweet",
+      "text": "Isso não é organização\n\nÉ um patrimônio que existe inteiro dentro de um CNPJ que responde por dívida trabalhista, fiscal e de fornecedor"
+    },
+    {
+      "type": "tweet",
+      "text": "Enquanto a empresa vai bem, ninguém repara\n\nNo primeiro processo, tudo que você chama de seu está no mesmo lugar que o risco"
+    },
+    {
+      "type": "tweet",
+      "text": "Empresário não perde patrimônio porque ganhou pouco\n\nPerde porque nunca separou o que construiu do que arrisca todo dia"
+    },
+    {
+      "type": "tweet",
+      "text": "O que está no seu nome hoje?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "Carro da empresa, sala da empresa, cartão da empresa. Quando alguém pergunta o que é seu, no seu nome, demora para responder. O que está no seu nome hoje?"
+}

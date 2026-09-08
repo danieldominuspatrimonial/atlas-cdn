@@ -1,0 +1,47 @@
+{
+  "slug": "trinta-e-dois-e-quarenta",
+  "aspect": "4:5",
+  "pips": false,
+  "swipe": false,
+  "author": {
+    "name": "Daniel Carvalho",
+    "handle": "soudanielcarvalho",
+    "avatar": "render/assets/avatar.jpg",
+    "verified": true
+  },
+  "_registro": "Eixo dor ampla, carga tributaria. Hook NUMERICO, slot NOITE. Sem foto. Numero: carga tributaria bruta do Governo Geral em 32,40% do PIB em 2025, maior da serie. Fonte: boletim do Tesouro Nacional, divulgado em abril de 2026, Ministerio da Fazenda. Verificado em 07/set/2026.",
+  "slides": [
+    {
+      "type": "tweet",
+      "text": "A carga tributária brasileira chegou a 32,40% do PIB em 2025\n\nÉ a maior da série histórica"
+    },
+    {
+      "type": "tweet",
+      "text": "De cada 100 reais que o país produz, mais de 32 vão para o Estado antes de qualquer decisão sua"
+    },
+    {
+      "type": "tweet",
+      "text": "O dado é do Tesouro Nacional, publicado em abril deste ano\n\nNão é estimativa de instituto privado, é o número oficial"
+    },
+    {
+      "type": "tweet",
+      "text": "Recorde de arrecadação não veio junto com recorde de hospital, de estrada ou de segurança"
+    },
+    {
+      "type": "tweet",
+      "text": "A conta chega inteira para quem produz\n\nE volta como fila, como espera e como serviço que não funciona"
+    },
+    {
+      "type": "tweet",
+      "text": "Você já somou quanto a sua empresa entregou ao Estado no ano passado?",
+      "engagement": {
+        "reply": "",
+        "repost": "",
+        "like": "",
+        "save": "",
+        "share": ""
+      }
+    }
+  ],
+  "caption": "A carga tributária bateu 32,40% do PIB em 2025, a maior da série do Tesouro Nacional. Recorde de arrecadação não veio junto com recorde de serviço. Você já somou o que a sua empresa pagou?"
+}
